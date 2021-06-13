@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="medium" routerLink="/signup">Registro</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="header">
+    <img src="assets/Logo.jpeg" />
+  </div>
+
+  <form id="form0">
+    <app-input placeholder="Correo"></app-input>
+    <app-input type="password" placeholder="Contraseña"></app-input>
+    <ion-buttons slot="start">
+      <ion-button slot="start" routerLink="/signup">¿Has olvidado la contraseña?</ion-button>
+    </ion-buttons>
+  </form>
+  
+  <form id="form"> 
+    <ion-button color="primary" expand="block" shape="round">Iniciar Sesión</ion-button>
+    <ion-button color="danger" expand="block" shape="round">Continuar con google</ion-button>
+  </form>
+</ion-content>
