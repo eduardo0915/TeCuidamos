@@ -16,20 +16,17 @@ ion-toolbar {
       display: flex;
       flex-direction: column;
       align-items: center;
-  
-     
-  
-      img {
-        margin-top: 5%;
-        width: 125px;
-        height: 125px;
-        border-radius: 50%;
-        border: 8px solid #ffffff;
-      }
+      
     }
-  
+    h1 {
+      text-align: center;
+      font-weight: 700;
+        font-size: 26px;
+        color: #010100;
+        margin-bottom: 15%;
+      }
     #form0 {
-      margin-top: 10%;
+      margin-top: 1%;
       padding-left: 30px;
       padding-right: 30px;
   
