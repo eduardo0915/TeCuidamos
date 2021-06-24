@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "TeCuidamos",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
