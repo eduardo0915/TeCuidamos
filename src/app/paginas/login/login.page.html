@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="start" routerLink="/bienvenida">
       <ion-button color="light">
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-button>
@@ -17,15 +17,33 @@
   </div>
 
   <form id="form0">
-    <app-input placeholder="Correo"></app-input>
-    <app-input type="password" placeholder="Contraseña"></app-input>
-    <ion-buttons slot="start">
-      <ion-button slot="start" routerLink="/signup">¿Has olvidado la contraseña?</ion-button>
-    </ion-buttons>
+   
+    <ion-item class="input-container" lines="none" align-items-center>
+      <ion-icon class="custom-icon" name="mail-outline" slot="start" no-padding></ion-icon>
+      <ion-label position="floating" no-padding>Correo</ion-label>
+      <ion-input no-padding #email required></ion-input>
+    </ion-item>
+
+    <ion-item class="input-container" lines="none">
+      <ion-icon class="custom-icon" name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" #password required></ion-input>
+      <ion-icon name="eye-off-outline" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <p class="ion-text-end">
+          <a routerLink="/recuperar-contrasena">Olvidaste la contraseña? </a>
+        </p>
+      </ion-col>
+      </ion-row>
+
+    
   </form>
   
   <form id="form"> 
-    <ion-button color="primary" expand="block" shape="round">Iniciar Sesión</ion-button>
-    <ion-button color="danger" expand="block" shape="round">Continuar con google</ion-button>
+    <ion-button color="primary" expand="block" shape="round" type="submit" (click)="onLogin(email, password)">Iniciar Sesión</ion-button>
+    <ion-button color="danger" expand="block" shape="round" type="submit" color="danger" (click)="onloginGoogle(email, password)">Continuar con google</ion-button>
   </form>
 </ion-content>

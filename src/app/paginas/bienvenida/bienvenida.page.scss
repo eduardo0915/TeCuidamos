@@ -35,7 +35,7 @@ ion-button{
 }
 
 .login-buttons{
-    display: flex;
+    //display: flex;
     justify-content: space-between;
 
     ion-button{
@@ -81,6 +81,23 @@ ion-button{
     
     .signup-btn{
         --background: #2665AA;
+
+    }
+
+    .signup-btn2{
+        ion-avatar{
+            height: 17px;
+            width: 12px;
+            margin-right: 7px;
+            margin-bottom: 1px;
+        }
+           
+            --background: #fff;
+            --color : #3b3b3b;
+            --border-style : #eeeeee;
+            --border-width: 0.5px;
+    
+        
 
     }
 

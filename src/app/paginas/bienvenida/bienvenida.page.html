@@ -7,15 +7,17 @@
   </ion-text>
 
   <div class="actions">
-    <div class="login-buttons">
-      <ion-button>
+    
+      <ion-button class="signup-btn2" expand= "block" (click)="onloginGoogle(email, password)">
         <ion-avatar>
           <img src="assets/G.png">
         </ion-avatar>
         <ion-label>Google</ion-label>
       </ion-button>
 
-    </div>
+    
+
+    
 
     <div class="separator">
       <span>or</span>
@@ -23,10 +25,10 @@
       <span class="line right"></span>
     </div>
 
-    <ion-button class="signup-btn" expand= "block">
+    <ion-button class="signup-btn" expand= "block" routerLink="/login">
       Iniciar Sesión con correo
     </ion-button>
-    <p class="login">Existe Usuario? <a>Crear Cuenta</a></p>
+    <p class="login">Existe Usuario? <a routerLink="/registro">Crear Cuenta</a></p>
 
   </div>
   

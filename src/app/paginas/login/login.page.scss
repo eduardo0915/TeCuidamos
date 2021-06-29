@@ -45,6 +45,25 @@ ion-toolbar {
         font-weight:bold;
         
       }
+      .input-container {
+        border: 1px solid #e8e8e8;
+        --border-radius: 5px;
+        --min-height:50px; 
+        --highlight-color-focused :#1259a1;
+        width: 100%;
+        &:first-child {
+          margin-bottom: 10px;
+        }
+    
+        .email-pattern {
+          color: #cccccc;
+        }
+    
+        .custom-icon{
+            width:16px;
+            height: 16px;
+        }
+      }
 
     }
 

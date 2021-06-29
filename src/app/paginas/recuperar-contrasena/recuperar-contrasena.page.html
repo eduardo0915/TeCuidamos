@@ -1,0 +1,42 @@
+  
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start" routerLink="/login">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="medium" routerLink="/login">Iniciar Sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="header">
+    <img src="assets/Logo.jpeg" />
+  </div>
+
+<h1>Has olvidado tu contraseña</h1>
+  <form id="form0">
+    
+
+    <ion-item class="input-container" lines="none" align-items-center>
+      <ion-icon class="custom-icon" name="mail-outline" slot="start" no-padding></ion-icon>
+      <ion-label position="floating" no-padding>Correo</ion-label>
+      <ion-input no-padding #email required></ion-input>
+    </ion-item>
+
+  </form>
+  
+
+
+  <form action="" id="form"> 
+
+
+
+    <ion-button type="submot" color="primary" expand="block" shape="round" (click)="onResetPassword(email)">Solicitar</ion-button>
+  </form>
+</ion-content>
+

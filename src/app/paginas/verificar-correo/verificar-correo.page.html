@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start" routerLink="/login">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="medium" routerLink="/login">Iniciar Sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="user$ | async as user">
+  <ion-row>
+    <ion-col>
+      <h2>¡Gracias por registrarte!</h2>
+      <p>Hemos enviado un correo electrónico de confirmación a <strong>{{user.email}}</strong></p>
+      <p>Por favor revise su correo electrónico y haga clic en el enlace para verificar su dirección de correo electrónico.</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="primary" expand="block" (click)="onSendEmail()"
+        >Reenviar correo electrónico de verificación</ion-button
+      >
+    </ion-col>
+  </ion-row>
+</ion-content>
