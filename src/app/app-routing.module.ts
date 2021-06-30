@@ -34,7 +34,19 @@ const routes: Routes = [
   {
     path: 'verificar-correo',
     loadChildren: () => import('./paginas/verificar-correo/verificar-correo.module').then( m => m.VerificarCorreoPageModule)
+  },  {
+    path: 'recordatorios',
+    loadChildren: () => import('./paginas/recordatorios/recordatorios.module').then( m => m.RecordatoriosPageModule)
+  },
+  {
+    path: 'autocuidado',
+    loadChildren: () => import('./paginas/autocuidado/autocuidado.module').then( m => m.AutocuidadoPageModule)
+  },
+  {
+    path: 'agregar',
+    loadChildren: () => import('./recordatorios/agregar/agregar.module').then( m => m.AgregarPageModule)
   }
+
   
 ];
 
