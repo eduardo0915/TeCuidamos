@@ -1,0 +1,27 @@
+#mobile-menu {
+  width: 30px;
+  float: left;
+  margin: 10px;
+}
+#bottom {
+  align-self: flex-end;
+  margin: 10px;
+}
+#agregar {
+  margin: 10px;
+}
+.ion-float- {
+  float: left;
+}
+
+texto-blanco {
+  --color: #ffffff;
+}
+ion-toolbar {
+  --background: #2665aa;
+
+  ion-button {
+    text-transform: initial;
+    font-size: 17px;
+  }
+}
