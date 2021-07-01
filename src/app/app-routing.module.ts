@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -21,7 +21,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'bienvenida',
@@ -34,7 +35,8 @@ const routes: Routes = [
   {
     path: 'verificar-correo',
     loadChildren: () => import('./paginas/verificar-correo/verificar-correo.module').then( m => m.VerificarCorreoPageModule)
-  },  {
+  },
+  {
     path: 'recordatorios',
     loadChildren: () => import('./paginas/recordatorios/recordatorios.module').then( m => m.RecordatoriosPageModule)
   },
