@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+<<<<<<< Updated upstream
 import { AuthGuard } from './auth.guard';
+=======
+
+>>>>>>> Stashed changes
 const routes: Routes = [
   {
     path: '',
@@ -21,8 +25,12 @@ const routes: Routes = [
   },
   {
     path: 'home',
+<<<<<<< Updated upstream
     loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule),
     canActivate: [AuthGuard]
+=======
+    loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule)
+>>>>>>> Stashed changes
   },
   {
     path: 'bienvenida',
@@ -48,6 +56,7 @@ const routes: Routes = [
     path: 'agregar',
     loadChildren: () => import('./recordatorios/agregar/agregar.module').then( m => m.AgregarPageModule)
   },
+<<<<<<< HEAD
   {
     path: 'perfil',
     loadChildren: () => import('./paginas/perfil/perfil.module').then( m => m.PerfilPageModule)
@@ -70,9 +79,19 @@ const routes: Routes = [
   }
 
 
+=======
+  {path: '**', redirectTo:'home'}
+
   
 ];
 
+<<<<<<< Updated upstream
+>>>>>>> be89957d0b246fd877d9bec6c5a647b57d57dc6a
+  
+];
+
+=======
+>>>>>>> Stashed changes
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
