@@ -47,7 +47,27 @@ const routes: Routes = [
   {
     path: 'agregar',
     loadChildren: () => import('./recordatorios/agregar/agregar.module').then( m => m.AgregarPageModule)
+  },  {
+    path: 'perfil',
+    loadChildren: () => import('./paginas/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'informacion-basica',
+    loadChildren: () => import('./paginas/informacion-basica/informacion-basica.module').then( m => m.InformacionBasicaPageModule)
+  },
+  {
+    path: 'enfermedades',
+    loadChildren: () => import('./paginas/enfermedades/enfermedades.module').then( m => m.EnfermedadesPageModule)
+  },
+  {
+    path: 'discapacidades',
+    loadChildren: () => import('./paginas/discapacidades/discapacidades.module').then( m => m.DiscapacidadesPageModule)
+  },
+  {
+    path: 'contactos',
+    loadChildren: () => import('./paginas/contactos/contactos.module').then( m => m.ContactosPageModule)
   }
+
 
   
 ];
