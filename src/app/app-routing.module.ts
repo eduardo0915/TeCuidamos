@@ -47,7 +47,8 @@ const routes: Routes = [
   {
     path: 'agregar',
     loadChildren: () => import('./recordatorios/agregar/agregar.module').then( m => m.AgregarPageModule)
-  },  {
+  },
+  {
     path: 'perfil',
     loadChildren: () => import('./paginas/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
