@@ -25,13 +25,11 @@ const routes: Routes = [
   },
   {
     path: 'home',
-<<<<<<< Updated upstream
+
     loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule),
     canActivate: [AuthGuard]
-=======
-    loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule)
->>>>>>> Stashed changes
   },
+ 
   {
     path: 'bienvenida',
     loadChildren: () => import('./paginas/bienvenida/bienvenida.module').then( m => m.BienvenidaPageModule)
