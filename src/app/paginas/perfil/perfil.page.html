@@ -1,0 +1,64 @@
+<ion-content [fullscreen]="true">
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+     <ion-menu-button *ngIf="!back"></ion-menu-button>
+     <ion-back-button *ngIf="back" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-grid class="main-header">
+    <div align="center">
+      <ion-avatar>
+        <img src="assets/avatar2.jpg" />
+      </ion-avatar>
+    </div>
+  </ion-grid>
+
+  <ion-row text-center>
+    <ion-col size="6" class="ion-align-self-center" >
+      <ion-item lines="none" class="ion-text-center">
+        <ion-icon color="primary" name="id-card-outline"></ion-icon>
+        <ion-label>
+          <p>Eduardo Martinez</p>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="6" class="ion-align-self-center" >
+      <ion-item lines="none" class="ion-text-center">
+        <ion-icon name="reader-outline" color="primary"></ion-icon>
+        <ion-label>
+          <p>Ficha</p>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label>
+        <p><ion-text color="dark">Información Basica</ion-text></p>
+      </ion-label>
+      <ion-icon  name="arrow-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <p><ion-text color="dark">Enfermedades</ion-text></p>
+      </ion-label>
+      <ion-icon  name="arrow-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <p><ion-text color="dark">Discapacidades</ion-text></p>
+      </ion-label>
+      <ion-icon  name="arrow-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <p><ion-text color="dark">Contactos</ion-text></p>
+      </ion-label>
+      <ion-icon  name="arrow-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-<<<<<<< Updated upstream
 import { AuthGuard } from './auth.guard';
-=======
-
->>>>>>> Stashed changes
 const routes: Routes = [
   {
     path: '',
@@ -25,11 +21,9 @@ const routes: Routes = [
   },
   {
     path: 'home',
-
     loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule),
-    canActivate: [AuthGuard]
+
   },
- 
   {
     path: 'bienvenida',
     loadChildren: () => import('./paginas/bienvenida/bienvenida.module').then( m => m.BienvenidaPageModule)
@@ -54,17 +48,32 @@ const routes: Routes = [
     path: 'agregar',
     loadChildren: () => import('./recordatorios/agregar/agregar.module').then( m => m.AgregarPageModule)
   },
-  {path: '**', redirectTo:'home'}
+  {
+    path: 'perfil',
+    loadChildren: () => import('./paginas/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'informacion-basica',
+    loadChildren: () => import('./paginas/informacion-basica/informacion-basica.module').then( m => m.InformacionBasicaPageModule)
+  },
+  {
+    path: 'enfermedades',
+    loadChildren: () => import('./paginas/enfermedades/enfermedades.module').then( m => m.EnfermedadesPageModule)
+  },
+  {
+    path: 'discapacidades',
+    loadChildren: () => import('./paginas/discapacidades/discapacidades.module').then( m => m.DiscapacidadesPageModule)
+  },
+  {
+    path: 'contactos',
+    loadChildren: () => import('./paginas/contactos/contactos.module').then( m => m.ContactosPageModule)
+  }
+
 
   
 ];
+ 
 
-<<<<<<< Updated upstream
-  
-];
-
-=======
->>>>>>> Stashed changes
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
