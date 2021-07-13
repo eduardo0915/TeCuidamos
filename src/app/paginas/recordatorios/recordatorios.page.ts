@@ -9,7 +9,7 @@ export class RecordatoriosPage implements OnInit {
 
  
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
