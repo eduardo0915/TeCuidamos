@@ -17,26 +17,30 @@
     <img src="assets/Logo.jpeg" />
   </div>
 
+  <div *ngIf="!uid.length"> 
+
 <h1>Crear Cuenta</h1>
   <form id="form0">
     <ion-item class="input-container" lines="none" align-items-center>
       <ion-icon class="custom-icon" name="accessibility-outline" slot="start" no-padding></ion-icon>
       <ion-label position="floating" no-padding>Nombre Completo</ion-label>
-      <ion-input no-padding></ion-input>
+       <ion-input [(ngModel)]="usuario.Nombre" [ngModelOptions]="{standalone: true}" class="normal" type="text" inputmode="text">
+      </ion-input>
     </ion-item>
 
     <ion-item class="input-container" lines="none" align-items-center>
       <ion-icon class="custom-icon" name="mail-outline" slot="start" no-padding></ion-icon>
       <ion-label position="floating" no-padding>Correo</ion-label>
-      <ion-input no-padding #email required></ion-input>
+      <ion-input  no-padding #email required></ion-input>
     </ion-item>
 
     <ion-item class="input-container" lines="none">
       <ion-icon class="custom-icon" name="lock-closed-outline" slot="start"></ion-icon>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" #password required></ion-input>
+      <ion-input  type="password" #password required></ion-input>
       <ion-icon name="eye-off-outline" slot="end"></ion-icon>
     </ion-item>
+
 
   </form>
   
@@ -47,6 +51,10 @@
 
 
     <ion-button type="submot" color="primary" expand="block" shape="round" (click)="onRegister(email, password)">Crear Cuenta</ion-button>
-    <p align="center" >Al hacer clic en Crear una cuenta, acepta nuestros Términos de servicio. PRUEBA</p>
+    
+    <ion-button type="submot" color="primary" expand="block" shape="round" (click)="salir()">Salir</ion-button>
+    <p align="center" >Al hacer clic en Crear una cuenta, acepta nuestros Términos de servicio.</p>
   </form>
+
+   </div>
 </ion-content>

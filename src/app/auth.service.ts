@@ -4,7 +4,9 @@ import { auth } from 'firebase/app';
 import { AngularFirestore, AngularFirestoreDocument } from "@angular/fire/firestore";
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { User } from './paginas/user.interface';
+import { User, Usuario } from './paginas/user.interface';
+import { FirestoreService } from 'src/app/firestore.service';
+import { FirestorageService } from 'src/app/firestorage.service';
 
 
 
@@ -13,9 +15,13 @@ import { User } from './paginas/user.interface';
 })
 export class AuthService {
 
+ datosUsuario: Usuario;
+
   public user$: Observable<User>;
 
-  constructor(public afAuth:AngularFireAuth, public afs: AngularFirestore) { 
+  constructor(public afAuth:AngularFireAuth, public afs: AngularFirestore,
+    private firestoreService: FirestoreService) { 
+    this.stateUser();
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user)  => {
         if (user) {
@@ -26,6 +32,18 @@ export class AuthService {
       })
     );
    }
+
+   stateUser() {
+    this.stateAuth().subscribe( res => {
+      // console.log(res);
+      if (res !== null) {
+         this.getInfoUser();
+
+      }  
+    }  );
+  }
+
+
 
   
   async resetPassword(email: string): Promise<void> { 
@@ -51,7 +69,8 @@ export class AuthService {
   }
   async register(email: string, password: string): Promise<User> {
     try {
-      const { user } = await this.afAuth.createUserWithEmailAndPassword(email, password); 
+      const { user } = await this.afAuth.createUserWithEmailAndPassword(email, password);
+      
       await this.sendVerificationEmail();
       return user;
      }
@@ -117,5 +136,32 @@ displayName: user.displayName,
   }  ;
   return userRef.set(data, {merge: true});
 }
+
+//Nuevo login y registro
+
+async getUid() {
+  const user = await this.afAuth.currentUser;
+  if (user === null) {
+    return null;
+  } else {
+     return user.uid;
+  }
+}
+
+stateAuth() {
+  return this.afAuth.authState;
+}
+
+async getInfoUser() {
+  const uid = await this.getUid();
+  const path = 'Usuarios';  
+  this.firestoreService.getDoc<Usuario>(path, uid).subscribe( res => {
+        if (res !== undefined) {
+              this.datosUsuario = res;
+              // console.log('datosCliente ->' , this.datosCliente);
+        }
+  });
+}
+ 
 
 }

@@ -17,6 +17,7 @@
     </div>
   </ion-grid>
 
+  <div *ngIf="!uid.length">
   <ion-row text-center>
     <ion-col size="6" class="ion-align-self-center" >
       <ion-item lines="none" class="ion-text-center">
@@ -57,5 +58,7 @@
       </ion-label>
     </ion-item>
   </ion-list>
+
+</div>
 
 </ion-content>
