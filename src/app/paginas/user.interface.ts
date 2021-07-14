@@ -10,6 +10,8 @@ export interface Usuario{
     uid: string;
     Nombre: string;
     foto:string;
+    edad: string;
+    sexo: string;
      
 }
 
