@@ -5,25 +5,25 @@
      <ion-menu-button *ngIf="!back"></ion-menu-button>
      <ion-back-button *ngIf="back" defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="end">
+    <ion-buttons *ngIf="!actualizarEnable" (click)="actualizarEnable = true"  class="normal" color="dark" slot="end">
       <ion-button fill="clear">EDITAR</ion-button>
      </ion-buttons>
   </ion-toolbar>
   <ion-grid class="main-header">
     <div align="center">
       <ion-avatar>
-        <img src="assets/avatar2.jpg" />
+        <img src="{{usuario.foto}}" />
       </ion-avatar>
     </div>
   </ion-grid>
 
-  <div *ngIf="!uid.length">
+  <div> 
   <ion-row text-center>
     <ion-col size="6" class="ion-align-self-center" >
       <ion-item lines="none" class="ion-text-center">
         <ion-icon color="primary" name="id-card-outline"></ion-icon>
         <ion-label>
-          <p>Eduardo Martinez</p>
+          <p>{{usuario.Nombre}}</p> 
         </ion-label>
       </ion-item>
     </ion-col>
@@ -38,11 +38,13 @@
     </ion-col>
   </ion-row>
 
-  <ion-list lines="full">
+  <!--modo lectura-->
+
+  <ion-list lines="full" *ngIf="!actualizarEnable">
     <ion-item>
       <ion-label>
         <ion-text>Nombre</ion-text>
-        <p><ion-text color="dark">Eduardo Martinez</ion-text></p>
+        <p><ion-text color="dark">{{usuario.Nombre}}</ion-text></p>
       </ion-label>
     </ion-item>
     <ion-item>
@@ -58,6 +60,48 @@
       </ion-label>
     </ion-item>
   </ion-list>
+
+  <!--modo modificacion-->
+
+  <ion-list lines="full" *ngIf="actualizarEnable">
+    <ion-item>
+      <ion-label>
+        <ion-text>Nombre</ion-text>
+        <p><ion-input [(ngModel)]="usuario.Nombre" color="dark"></ion-input></p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text>Edad</ion-text>
+        <p><ion-input [(ngModel)]="usuario.edad" color="dark"></ion-input></p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text>Sexo</ion-text>
+        <p><ion-input [(ngModel)]="usuario.sexo" color="dark"></ion-input></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="actualizarEnable">
+    <ion-label class="normal">
+        Foto:
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+         <label for="file-upload">
+           <ion-icon slot="icon-only" name="images"></ion-icon>
+         </label>
+          <input  (change)="newImageUpload($event)" id="file-upload" style="display: none" type="file"  accept="image/*">
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+ <!-- <ion-item>
+    <img class="image"  [src]="usuario.foto">
+  </ion-item>-->
+
+  <ion-button *ngIf="actualizarEnable" type="submot" color="primary" expand="block" shape="round" (click)="ActualizarUsuario()" (click)="actualizarEnable = false" >Guardar</ion-button>
 
 </div>
 

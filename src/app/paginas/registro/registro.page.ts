@@ -18,17 +18,22 @@ export class RegistroPage implements OnInit {
     uid: "",
     Nombre: "",
     foto: "",
+    edad: "",
+    sexo: "",
   };
 
   newFile: any;
   uid = '';
   suscriberUserInfo: Subscription;
+  ingresarEnable = false;
 
   constructor(private authSvc: AuthService, private router: Router,
     public firestoreService: FirestoreService,
     public firestorageService: FirestorageService) {
 
-     /* this.authSvc.stateAuth().subscribe( res => {
+      
+     
+      this.authSvc.stateAuth().subscribe( res => {
         console.log(res.uid);
         if (res !== null) {
           this.uid = res.uid;
@@ -36,10 +41,8 @@ export class RegistroPage implements OnInit {
         } else {
           this.initCliente();
       }
-
-        
-      
-});*/
+    
+});
      }
 
 
@@ -56,6 +59,8 @@ export class RegistroPage implements OnInit {
       uid: '',
       Nombre: '',
       foto: '',
+      edad: '',
+      sexo: '',
     };
     console.log(this.usuario);
 }
@@ -109,6 +114,7 @@ catch(error){
 
    async salir() {
     this.authSvc.logout();
+    this.suscriberUserInfo.unsubscribe();
     //prueba se puede borrar esa linea
     //const uid = await this.authSvc.getUid();
     //console.log(uid);
@@ -120,6 +126,16 @@ catch(error){
   this.suscriberUserInfo = this.firestoreService.getDoc<Usuario>(path, uid).subscribe( res => {
          if (res !== undefined) {
            this.usuario = res;
+         }
+  });
+}
+
+getUserInfoNombre(uid: string) {
+  console.log('getUserInfoNombre');
+  const path = 'Usuarios';
+  this.suscriberUserInfo = this.firestoreService.getDoc<Usuario>(path, uid).subscribe( res => {
+         if (res !== undefined) {
+           this.usuario.Nombre = res.Nombre;
          }
   });
 }

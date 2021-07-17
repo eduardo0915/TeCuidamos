@@ -20,7 +20,7 @@
     </ion-avatar>
 			<ion-label>
 				<p>Hola,</p>
-				<h3>Eduardo Martinez</h3>
+				<h3>{{usuario.Nombre}}</h3>
 			</ion-label>
 
 	</ion-item>
@@ -31,11 +31,11 @@
 
   <div class="slides ion-margin-bottom">
     <ion-slides [options]="slidesOptions">
-      <ion-slide>
+      <ion-slide routerLink="/perfil">
         <ion-card>
           <ion-card-header>
             <div class="main">
-              <img src="assets/avatar.jpg">
+              <img src="assets/avatar.jpg"> 
             </div>
             <img class="files" src="assets/SlidePerfil.jpg">
           </ion-card-header>
