@@ -10,20 +10,12 @@ import { RecordatoriosService } from 'src/app/services/recordatorios.service';
 })
 export class RecordatoriosPage {
   
-itemRef: any;
-contacts=[];
-  
+
 
   constructor(private db:AngularFireDatabase ) { }
 
    ngOnInit(){
-    this.itemRef=this.db.object('Recordatorio');
-      this.itemRef.snapshotChanges().subscribe(action => {
-
-        console.log(action.payload.val)
-      });
-
-    }
+    
   
-
+   }
 }

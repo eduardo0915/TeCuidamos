@@ -5,13 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class RecordatoriosService {
-  recid:string
+
   constructor(private http:HttpClient) { }
-  setrecid(_recid:string){
-   this.recid= _recid
-  
+
 }
-getRecid(){
-  return this.recid
-}
-}
+
+
