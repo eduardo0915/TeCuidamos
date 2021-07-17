@@ -20,6 +20,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 2rem;
+}
+#padining {
+  padding: 1rem;
 }
 img {
   height: 20vw;
@@ -43,8 +47,8 @@ ion-toolbar {
     position: relative;
   }
   .posicion {
-    bottom: 100% !important;
+    margin: 2rem;
     position: absolute;
-    margin-top: 2rem;
+    margin-right: 1;
   }
 }

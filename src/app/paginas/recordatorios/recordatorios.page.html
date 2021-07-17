@@ -1,5 +1,10 @@
 <ion-header>
   <ion-toolbar  class="ion-toolbar">
+    <ion-buttons slot="start" routerLink="/login">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
 
     <ion-title id="bottom" color="medium" >Recordatorios</ion-title>
     
@@ -12,16 +17,27 @@
   <ion-label id="agregar" >Agregar Recordatorios </ion-label>
   <ion-text></ion-text>
   <ion-label >MM/DD/YYYY</ion-label>
-  <ion-item><ion-fab-button fill="outline" size="small">+</ion-fab-button></ion-item>
+  <ion-item ><ion-fab-button href="agregar"  fill="outline" size="small">+</ion-fab-button></ion-item>
   
   
 
 </ion-item>
 <ion-content>
-  
+  <ion-list line="none">
+    <ion-item>
+      <ion-avatar>
+        <ion-img ></ion-img>
+       
+      </ion-avatar>
+      <ion-label position="floating">{{fecha_hora}}</ion-label>
+      <ion-input [(ngModel)]="descripcion">{{descripcion}}</ion-input>
+    </ion-item>
+
+    
+
+  </ion-list>
 
 
-  <h3 class="small">2021</h3>
 
 </ion-content>
 <!--iniciando-->

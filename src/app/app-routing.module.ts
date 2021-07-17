@@ -67,7 +67,23 @@ const routes: Routes = [
   {
     path: 'contactos',
     loadChildren: () => import('./paginas/contactos/contactos.module').then( m => m.ContactosPageModule)
+  },  {
+    path: 'orientacion',
+    loadChildren: () => import('./paginas/orientacion/orientacion.module').then( m => m.OrientacionPageModule)
+  },
+  {
+    path: 'guia',
+    loadChildren: () => import('./paginas/guia/guia.module').then( m => m.GuiaPageModule)
+  },
+  {
+    path: 'cuidados',
+    loadChildren: () => import('./paginas/cuidados/cuidados.module').then( m => m.CuidadosPageModule)
+  },
+  {
+    path: 'ejercicios',
+    loadChildren: () => import('./paginas/ejercicios/ejercicios.module').then( m => m.EjerciciosPageModule)
   }
+
 
 
   
