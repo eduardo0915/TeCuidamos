@@ -23,4 +23,17 @@ export interface Perfil{
      
 }
 
+export interface Discapacidades{ 
+    id: string;
+    nombre: string;
+    tratamiento: string;
+     
+}
+
+export interface Enfermedades{ 
+    id: string;
+    nombre: string;
+    tratamiento: string;
+     
+}
 

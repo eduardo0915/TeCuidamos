@@ -14,6 +14,8 @@ import { FirestorageService } from 'src/app/firestorage.service';
 })
 export class HomePage implements OnInit {
 
+  
+
   usuario: Usuario = {
     uid: "",
     Nombre: "",
@@ -32,6 +34,8 @@ export class HomePage implements OnInit {
     public firestoreService: FirestoreService,
     public firestorageService: FirestorageService) { 
 
+      
+
       this.authSvc.stateAuth().subscribe( res => {
         console.log(res.uid);
         if (res !== null) {
@@ -42,11 +46,13 @@ export class HomePage implements OnInit {
       }
     
 });
+
     }
 
   async ngOnInit() {
     const uid = await this.authSvc.getUid();
     console.log(uid);
+    
   }
    openMenu(){
     console.log('Open menu');
@@ -74,5 +80,6 @@ getUserInfo(uid: string) {
          }
   });
 }
+
 
 }

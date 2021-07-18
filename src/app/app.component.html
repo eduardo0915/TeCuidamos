@@ -9,22 +9,33 @@
     <p>Abuelo</p>
   </ion-label>
 </div>
-<div class="action-button">
-  <ion-button>
-    <ion-icon slot="start" name="add"></ion-icon>
-    Add recordatorio
-  </ion-button>
-</div>
+
 <ion-list class="menu-items" lines="none">
-<ion-item>
+<ion-item class="active" routerLink="/home">
   <ion-icon name="home-outline"></ion-icon>
   Inicio
 </ion-item>
-<ion-item class="active">
+<ion-item class="active" routerLink="/perfil">
+  <ion-icon name="accessibility-outline"></ion-icon>
+  Perfil
+</ion-item>
+<ion-item class="active" routerLink="/autocuidado">
   <ion-icon name="medkit-outline"></ion-icon>
   AutoCuidados
 </ion-item>
+<ion-item class="active">
+  <ion-icon name="earth-outline"></ion-icon>
+  MedioAmbiente
+</ion-item>
 </ion-list>
+
+<div class="action-button">
+  <ion-button (click)="salir()" (click)="MenuCloset()" routerLink="/login">
+    <ion-icon name="exit-outline"></ion-icon>
+    salir
+  </ion-button>
+</div>
+
   </ion-content>
 </ion-menu>
 <ion-router-outlet id="main"></ion-router-outlet>

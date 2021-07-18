@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { MenuController } from '@ionic/angular';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,5 +19,21 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  constructor(private authSvc: AuthService, private router: Router,
+    public menucontroler: MenuController) {}
+
+  suscriberUserInfo: Subscription;
+
+  async salir() {
+    this.authSvc.logout();
+    this.suscriberUserInfo.unsubscribe();
+    //prueba se puede borrar esa linea
+    //const uid = await this.authSvc.getUid();
+    //console.log(uid);
+ }
+
+ MenuCloset() {
+  this.menucontroler.enable(false, 'main-menu');
+ 
+}
 }

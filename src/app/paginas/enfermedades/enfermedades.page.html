@@ -5,24 +5,25 @@
      <ion-menu-button *ngIf="!back"></ion-menu-button>
      <ion-back-button *ngIf="back" defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button fill="clear">EDITAR</ion-button>
+    <ion-buttons *ngIf="!actualizarEnable" (click)="actualizarEnable = true"  class="normal" color="dark" slot="end">
+      <ion-button fill="clear">AGREGAR</ion-button>
      </ion-buttons>
   </ion-toolbar>
   <ion-grid class="main-header">
     <div align="center">
       <ion-avatar>
-        <img src="assets/avatar2.jpg" />
+        <img src="{{usuario.foto}}" />
       </ion-avatar>
     </div>
   </ion-grid>
 
+  <div> 
   <ion-row text-center>
     <ion-col size="6" class="ion-align-self-center" >
       <ion-item lines="none" class="ion-text-center">
         <ion-icon color="primary" name="id-card-outline"></ion-icon>
         <ion-label>
-          <p>Eduardo Martinez</p>
+          <p>{{usuario.Nombre}}</p> 
         </ion-label>
       </ion-item>
     </ion-col>
@@ -37,26 +38,49 @@
     </ion-col>
   </ion-row>
 
+  <!--modo lectura-->
+  <div *ngFor="let disca of enfermedade">
+  <ion-list lines="full" *ngIf="!actualizarEnable">
+    <ion-item >
+      <ion-label>
+        <ion-text>Enfermedadad</ion-text>
+       <ion-label color="dark">{{disca.nombre}}</ion-label>
+      </ion-label>
+    </ion-item>
+   </ion-list>
+  </div>
+    
+
+  <!--modo modificacion-->
+<div *ngIf="actualizarEnable">
+
   <ion-list lines="full">
     <ion-item>
       <ion-label>
-        <ion-text>Nombre</ion-text>
-        <p><ion-text color="dark">Eduardo Martinez</ion-text></p>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <ion-text>Edad</ion-text>
-        <p><ion-text color="dark">24</ion-text></p>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <ion-text>Sexo</ion-text>
-        <p><ion-text color="dark">Masculino</ion-text></p>
+        <ion-text>Enfermedad</ion-text>
+        <p><ion-input [(ngModel)]="enfermedades.nombre" color="dark"></ion-input></p>
       </ion-label>
     </ion-item>
   </ion-list>
 
-</ion-content>
+  <div *ngFor="let disca of enfermedade">
+  <ion-list lines="full" *ngIf="actualizarEnable">
+    <ion-item >
+       <ion-label color="dark">{{disca.nombre}}</ion-label>
+       <ion-buttons slot="end">
+        <ion-button (click)="deleteDiscapacidad(disca)">
+          <ion-icon slot="icon-only" color="danger" name="trash-bin"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</div>
 
+</div>
+
+
+  <ion-button *ngIf="actualizarEnable" type="submot" color="primary" expand="block" shape="round" (click)="ActualizarUsuario()" (click)="actualizarEnable = false" >Guardar</ion-button>
+
+</div>
+
+</ion-content>

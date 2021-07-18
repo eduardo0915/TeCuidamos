@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,20 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private authSvc: AuthService,private router: Router) { }
+  
+
+  constructor(private authSvc: AuthService,private router: Router,
+    private menu: MenuController) { 
+
+      
+    }
 
   ngOnInit() {
+   
   }
+  
+  
+
   async onLogin(email, password){
     try{
   const user = await this.authSvc.login(email.value, password.value);
@@ -55,6 +66,11 @@ export class LoginPage implements OnInit {
           //enviar a pagina de verificacion si no esta verificado
           this.router.navigate(["verificar-correo"]);
         }
+      }
+
+      MenuCloset() {
+        this.menu.enable(true, 'main-menu');
+       
       }
   }
   
