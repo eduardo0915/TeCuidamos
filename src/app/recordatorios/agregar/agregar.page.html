@@ -3,6 +3,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start" routerLink="/recordatorios">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title  color="medium">Agregar</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +19,8 @@
     <ion-datetime displayFormat="MM/DD/YYYY" min="1960-01-01" max="2060-12-31" value="2002-09-23T15:03:46.789"></ion-datetime>
     
   
-    <ion-title>Nombre de evento</ion-title>
+    <ion-label position="floating">Floating Label</ion-label>
+  <ion-input></ion-input>
   </ion-item>
 <p></p>
 <p></p>
@@ -22,8 +28,12 @@
 <div id="header">
   <img class="img-circle-small img-responsive">
 </div>
-<div class="posicion">
-  <ion-fab-button class="ion-float-right">+</ion-fab-button>
+
+<div id="header">
+  <ion-button size="small">Block Button</ion-button>
+</div>
+<div id="padining">
+  <ion-fab-button click="save" class="ion-float-right">+</ion-fab-button>
 </div>
 
   

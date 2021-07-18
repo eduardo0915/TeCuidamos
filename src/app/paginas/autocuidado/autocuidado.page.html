@@ -1,5 +1,10 @@
-  <ion-header>
-    <ion-toolbar  class="ion-toolbar">
+<ion-header>
+  <ion-toolbar  class="ion-toolbar">
+    <ion-buttons slot="start" routerLink="/home">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
       
       <ion-title id="bottom" color="medium" >AutoCuidado</ion-title>
       
@@ -9,29 +14,29 @@
 <ion-content>
      <div class="row">
       <div class="col col-6 izqu ">
-      <ion-card href="recordatorios" class=" invitado">
-        <ion-img class="izqu" src="assets/cuidado.jpg" ></ion-img>
-        <ion-label class="center">Orientacion al cuidado</ion-label>
+      <ion-card href="orientacion" class=" invitado">
+        <ion-img class="izqu" src="assets/cuidado.jpeg" ></ion-img>
+        <ion-label  class="center">Orientacion al cuidado</ion-label>
       </ion-card>
     </div>
     <div class="col col-6 derec ">
-      <ion-card href="recordatorios">
-        <ion-img class="" src="assets/guia.jpg"></ion-img>
-        <ion-label class="center">Guia autocuidado paso a paso</ion-label>
+      <ion-card href="guia">
+        <ion-img class="" src="assets/autocuidado.jpeg"></ion-img>
+        <ion-label class="center">Guia de autocuidado</ion-label>
       </ion-card>
     </div>
   </div>
   <div class="row">
     <div class="col col-6 izqu">
-      <ion-card href="recordatorios">
-        <ion-img  src="assets/salud.jpg"></ion-img>
-        <ion-label class="center">Cuidado de la salud mental</ion-label>
+      <ion-card href="cuidados">
+        <ion-img  src="assets/saludmental.jpeg"></ion-img>
+        <ion-label class="center">Cuidado salud mental</ion-label>
       </ion-card>
       </div>
       <div class="col col-6 derec " >
-      <ion-card href="recordatorios" >
-        <ion-img  src="assets/15445439653077.jpg"></ion-img>
-        <ion-label class="center">Guia de ejercicio</ion-label>
+      <ion-card href="ejercicios" >
+        <ion-img  src="assets/ejercicio.jpeg"></ion-img>
+        <ion-label class="center">Guia para ejercicio</ion-label>
       </ion-card>
   </div>
   </div>

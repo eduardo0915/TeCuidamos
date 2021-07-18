@@ -6,7 +6,7 @@ import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { User, Usuario } from './paginas/user.interface';
 import { FirestoreService } from 'src/app/firestore.service';
-import { FirestorageService } from 'src/app/firestorage.service';
+
 
 
 
@@ -20,7 +20,9 @@ export class AuthService {
   public user$: Observable<User>;
 
   constructor(public afAuth:AngularFireAuth, public afs: AngularFirestore,
-    private firestoreService: FirestoreService) { 
+    private firestoreService: FirestoreService
+    ) 
+    { 
     this.stateUser();
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user)  => {
