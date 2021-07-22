@@ -13,15 +13,28 @@
 </ion-header>
 
 <ion-content>
+  <ion-list-header>
+    <ion-label>Datos</ion-label>
+  </ion-list-header>
 
   <ion-item>
-    <ion-label position="floating">MM/DD/YYYY</ion-label>
-    <ion-datetime displayFormat="MM/DD/YYYY" min="1960-01-01" max="2060-12-31" value="2002-09-23T15:03:46.789"></ion-datetime>
-    
-  
-    <ion-label position="floating">Floating Label</ion-label>
-  <ion-input></ion-input>
+    <ion-label position="floating">Fecha</ion-label>
+    <ion-datetime placeholder=Cita  display-forrmat="DD MMMM YYYY"
+    cancelText="Cancelar!"
+    [ngModel]="fechaCita.toISOString()"
+    (ionChange)="cambioFecha($event)"></ion-datetime>
   </ion-item>
+  <ion-list-header>
+    <ion-label>Datos</ion-label>
+  </ion-list-header>    
+  <ion-item>
+    <ion-label position="floating">Hora</ion-label>
+    <ion-datetime displayFormat="HH:mm" placeholder=Cita  display-forrmat="HH MM SS"
+    cancelText="Cancelar!"
+    [ngModel]="fechaCita.toISOString()"
+    (ionChange)="cambioFecha($event)"></ion-datetime>
+  </ion-item>
+  
 <p></p>
 <p></p>
  
@@ -30,10 +43,12 @@
 </div>
 
 <div id="header">
-  <ion-button size="small">Block Button</ion-button>
+  <ion-button vertical="bottom" horizontal="end" slot="fixed" >Block Button</ion-button>
 </div>
 <div id="padining">
-  <ion-fab-button click="save" class="ion-float-right">+</ion-fab-button>
+  <ion-fab-button click="save" class="ion-float-right">
+    <ion-icon name="add-outline"></ion-icon>
+  </ion-fab-button>
 </div>
 
   

@@ -82,6 +82,10 @@ const routes: Routes = [
   {
     path: 'ejercicios',
     loadChildren: () => import('./paginas/ejercicios/ejercicios.module').then( m => m.EjerciciosPageModule)
+  },
+  {
+    path: 'dietas',
+    loadChildren: () => import('./paginas/dietas/dietas.module').then( m => m.DietasPageModule)
   }
 
 
