@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MenuController } from '@ionic/angular';
+import { PushService } from './service/push.service';
 
 @Component({
   selector: 'app-root',
@@ -19,10 +20,17 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor(private authSvc: AuthService, private router: Router,
-    public menucontroler: MenuController) {}
+  constructor(private authSvc: AuthService, 
+    private router: Router,
+    public menucontroler: MenuController,
+    private pushService: PushService) {}
 
   suscriberUserInfo: Subscription;
+//configuracion push 
+  initializeApp(){
+    this.pushService.configuracionInicial();
+
+  }
 
   async salir() {
     this.authSvc.logout();

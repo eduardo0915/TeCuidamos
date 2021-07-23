@@ -6,6 +6,7 @@ import { Usuario } from '../user.interface';
 import { Subscription } from 'rxjs';
 import { FirestoreService } from 'src/app/firestore.service';
 import { FirestorageService } from 'src/app/firestorage.service';
+import { PushService } from 'src/app/service/push.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { FirestorageService } from 'src/app/firestorage.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-
+ 
   
 
   usuario: Usuario = {
@@ -29,7 +30,7 @@ export class HomePage implements OnInit {
   suscriberUserInfo: Subscription;
   ingresarEnable = false;
 
-  constructor(public menucontroler: MenuController,
+  constructor(public  menucontroler: MenuController,
     private authSvc: AuthService, private router: Router,
     public firestoreService: FirestoreService,
     public firestorageService: FirestorageService) { 

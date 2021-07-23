@@ -32,7 +32,28 @@
       <ion-label position="floating">{{fecha_hora}}</ion-label>
       <ion-input [(ngModel)]="descripcion">{{descripcion}}</ion-input>
     </ion-item>
-
+    <ion-list>
+      <ion-list-header>
+        <ion-label>User</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>{{pushService.userId}}</ion-label>
+      </ion-item>
+      <ion-list-header>
+        <ion-label>Pushe</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let push of mensajes">
+        <ion-label>
+          <h3>{{push.title}}</h3>
+          <p>{{push.body}}</p>
+          <p>
+            {{push.additionalData | json}}
+          </p>
+    
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    
     
 
   </ion-list>
