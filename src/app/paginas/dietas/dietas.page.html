@@ -1,27 +1,106 @@
 <ion-content>
-  <header class="site-header">
-    <div class="hero">
+  <header class="site-header" translucent>
+
+     <div class="hero" >
+        <ion-buttons slot="start" routerLink="/recordatorios">
+            <ion-button color="light">
+              <ion-icon slot="icon-only" name="arrow-back">
+                
+            </ion-icon>
+              
+
+
+            </ion-button>
+          </ion-buttons>
+          <div class="menu-movil">
+           
+        </div>
+           
         <div class="contenido-header">
-            <nav class="redes-sociales">
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </nav>
+          
             <div class="informacion-evento">
                 <div class="clearfix">
-                    <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> 10-12 Dic</p>
-                    <p class="ciudad"><i class="fa fa-map-marker" aria-hidden="true"></i> Guadalajara, MX</p>
+                   
                 </div>
 
-                <h1 class="nombre-sitio">Dieta</h1>
-                <p class="slogan">La mejor conferencia de <span>diseño web</span></p>
+                <h1 class="nombre-sitio">TeCuidamos</h1>
+                <p class="slogan">La mejor resetas <span>para Dietas</span></p>
             </div>
             <!--.informacion-evento-->
+            <ion-header>
+                <ion-toolbar>
+                  
+                  <ion-title  color="medium">Dietas</ion-title>
+                </ion-toolbar>
+              </ion-header>
 
         </div>
     </div>
     <!--.hero-->
 </header>
+<ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <div>
+          
+            <p><ion-img src="assets/cuidado.jpeg"></ion-img></p>
+             
+        </div>
+        <div>
+            
+            <p><ion-img src="assets/cuidado.jpeg"></ion-img></p>
+            
+        </div>
+        <div>
+          
+            <p><ion-img src="assets/cuidado.jpeg"></ion-img></p>
+             
+        </div>
+        <div>
+            
+            <p><ion-img src="assets/cuidado.jpeg"></ion-img></p>
+             
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div>
+            
+            <p><ion-img src="assets/cuidado.jpeg"></ion-img></p>
+              
+        </div>
+        <div>
+           
+            <p><ion-img src="assets/cuidado.jpeg"></ion-img></p>
+              
+        </div>
+        <div>
+          
+            <p><ion-img src="assets/cuidado.jpeg"></ion-img></p>
+           
+        </div>
+        <div>
+            
+            <p><ion-img src="assets/cuidado.jpeg"></ion-img></p>
+             
+        </div>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
 </ion-content>
+<script>
+    const searchbar = document.querySelector('ion-searchbar');
+    const items = Array.from(document.querySelector('ion-list').children);
+
+    searchbar.addEventListener('ionInput', handleInput);
+
+    function handleInput(event) {
+      const query = event.target.value.toLowerCase();
+      requestAnimationFrame(() => {
+        items.forEach(item => {
+          const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
+          item.style.display = shouldShow ? 'block' : 'none';
+        });
+      });
+    }
+  </script>

@@ -67,7 +67,8 @@ const routes: Routes = [
   {
     path: 'contactos',
     loadChildren: () => import('./paginas/contactos/contactos.module').then( m => m.ContactosPageModule)
-  },  {
+  },
+  {
     path: 'orientacion',
     loadChildren: () => import('./paginas/orientacion/orientacion.module').then( m => m.OrientacionPageModule)
   },
@@ -86,7 +87,8 @@ const routes: Routes = [
   {
     path: 'dietas',
     loadChildren: () => import('./paginas/dietas/dietas.module').then( m => m.DietasPageModule)
-  }
+  },
+
 
 
 

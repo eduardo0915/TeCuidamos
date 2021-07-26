@@ -1,3 +1,15 @@
+div.hero {
+  background: url(/assets/encabezado.jpg);
+  height: 100%;
+}
+div.contenido-header {
+  padding-top: 40px;
+}
+@media only screen and (min-width: 768px) {
+  .contenido-header {
+    padding-top: 10px;
+  }
+}
 div.contenido-header {
   padding-top: 10px;
 }
@@ -29,8 +41,127 @@ h1.nombre-sitio {
   font-family: "PT Sans", sans-serif;
 }
 
+div.contenido-header {
+  padding-top: 40px;
+}
+@media only screen and (min-width: 768px) {
+  div.contenido-header {
+    padding-top: 10px;
+  }
+}
+nav.redes-sociales {
+  text-align: center;
+}
+nav.redes-sociales a {
+  color: #ffffff;
+  font-size: 2em;
+  margin-right: 20px;
+}
+nav.redes-sociales a:last-child {
+  margin-right: 0;
+}
+div.informacion-evento {
+  text-align: center;
+  color: #ffffff;
+}
+@media only screen and (min-width: 768px) {
+  div.informacion-evento {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+div.informacion-evento p {
+  margin: 0;
+  display: inline;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+div.informacion-evento p i {
+  color: #fe4918;
+  font-size: 2.4rem;
+}
+p.fecha {
+  float: left;
+}
+p.ciudad {
+  float: right;
+  text-align: right;
+}
+p.slogan {
+  text-transform: none !important;
+}
+p.slogan span {
+  font-weight: bold;
+}
+h1.nombre-sitio {
+  font-size: 5.9vw;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+}
+@media only screen and (min-width: 768px) {
+  h1.nombre-sitio {
+    font-size: 11.5vw;
+    margin: 0;
+    line-height: 1;
+  }
+}
 h1.nombre-sitio {
   font-size: 11.5px;
   margin: 0;
   line-height: 1;
+}
+#mobile-menu {
+  width: 30px;
+  float: left;
+  margin: 10px;
+}
+#bottom {
+  align-self: flex-end;
+  margin: 10px;
+}
+#agregar {
+  margin: 10px;
+}
+.forma {
+  height: 10vw;
+  width: 10vw;
+  margin-left: 0 0 0 auto;
+  margin-right: 0 0 0 auto;
+}
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+#padining {
+  padding: 1rem;
+}
+img {
+  height: 20vw;
+  width: 20vw;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px gray;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+texto-blanco {
+  --color: #ffffff;
+}
+ion-toolbar {
+  --background: #2665aa;
+
+  ion-button {
+    text-transform: initial;
+    font-size: 10px;
+    position: relative;
+  }
+  .posicion {
+    margin: 2rem;
+    position: absolute;
+    margin-right: 1;
+  }
 }

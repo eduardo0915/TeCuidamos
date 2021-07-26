@@ -9,6 +9,8 @@ import {AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 
+
+
 // storage module
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
@@ -17,7 +19,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [ BrowserModule, IonicModule.forRoot(),
-     AppRoutingModule,AngularFireModule.initializeApp(environment.firebaseConfig),AngularFireAuthModule],
+  AppRoutingModule,AngularFireModule.initializeApp(environment.firebaseConfig),AngularFireAuthModule],
   providers: [NativeStorage, OneSignal,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
 })

@@ -28,7 +28,7 @@ export class AppComponent {
   suscriberUserInfo: Subscription;
 //configuracion push 
   initializeApp(){
-    this.pushService.configuracionInicial();
+
 
   }
 
