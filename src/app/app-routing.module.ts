@@ -46,7 +46,7 @@ const routes: Routes = [
   },
   {
     path: 'agregar',
-    loadChildren: () => import('./recordatorios/agregar/agregar.module').then( m => m.AgregarPageModule)
+    loadChildren: () => import('./paginas/agregar/agregar.module' ).then( m => m.AgregarPageModule)
   },
   {
     path: 'perfil',
@@ -87,10 +87,15 @@ const routes: Routes = [
   {
     path: 'dietas',
     loadChildren: () => import('./paginas/dietas/dietas.module').then( m => m.DietasPageModule)
-  },  {
+  },
+  {
     path: 'medio-ambiente',
     loadChildren: () => import('./paginas/medio-ambiente/medio-ambiente.module').then( m => m.MedioAmbientePageModule)
+  },  {
+    path: 'detalles-a',
+    loadChildren: () => import('./paginas/detalles-a/detalles-a.module').then( m => m.DetallesAPageModule)
   },
+
 
 
 
