@@ -87,7 +87,11 @@ const routes: Routes = [
   {
     path: 'dietas',
     loadChildren: () => import('./paginas/dietas/dietas.module').then( m => m.DietasPageModule)
+  },  {
+    path: 'medio-ambiente',
+    loadChildren: () => import('./paginas/medio-ambiente/medio-ambiente.module').then( m => m.MedioAmbientePageModule)
   },
+
 
 
 

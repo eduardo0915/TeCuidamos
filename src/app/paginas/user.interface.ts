@@ -41,8 +41,8 @@ export interface Enfermedades{
 
 export interface Agregar{ 
     id: string;
-    fecha: string;
-    hora: string;
+    fecha: Date;
+    hora: Date;
     descripcion: string;
      
 }
