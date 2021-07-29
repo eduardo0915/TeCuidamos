@@ -11,5 +11,8 @@ export class DietasPage implements OnInit {
 
   ngOnInit() {
   }
+  onSearchChange(event){
+    console.log(event);
 
+  }
 }

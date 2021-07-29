@@ -2,20 +2,25 @@
   <header class="site-header" translucent>
 
      <div class="hero" >
-        <ion-buttons slot="start" routerLink="/recordatorios">
-            <ion-button color="light">
-              <ion-icon slot="icon-only" name="arrow-back">
-                
-            </ion-icon>
-              
-
-
-            </ion-button>
-          </ion-buttons>
-          <div class="menu-movil">
-           
-        </div>
-           
+  <div> 
+    <ion-buttons class="izqu" slot="start" routerLink="/recordatorios">
+    <ion-button color="light">
+      <ion-icon slot="icon-only" name="arrow-back">
+    </ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <div class="derec">
+    <ion-searchbar class="ion-float-right"placeholder=""
+    witch="20px"
+    color="light" 
+    showCancelButton="focus"
+    animated 
+    inputmode="text"
+    (ionChange)="onSearchChange(event)"
+    [debounce]="250"
+    ></ion-searchbar>
+</div>
+</div>    
         <div class="contenido-header">
           
             <div class="informacion-evento">
@@ -41,9 +46,9 @@
 <ion-grid>
     <ion-row>
       <ion-col size="6">
-        <div>
+        <div >
           
-            <p><ion-img src="assets/cuidado.jpeg"></ion-img></p>
+            <p><ion-img  src="assets/cuidado.jpeg"></ion-img></p>
              
         </div>
         <div>
@@ -88,19 +93,3 @@
     </ion-row>
   </ion-grid>
 </ion-content>
-<script>
-    const searchbar = document.querySelector('ion-searchbar');
-    const items = Array.from(document.querySelector('ion-list').children);
-
-    searchbar.addEventListener('ionInput', handleInput);
-
-    function handleInput(event) {
-      const query = event.target.value.toLowerCase();
-      requestAnimationFrame(() => {
-        items.forEach(item => {
-          const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
-          item.style.display = shouldShow ? 'block' : 'none';
-        });
-      });
-    }
-  </script>

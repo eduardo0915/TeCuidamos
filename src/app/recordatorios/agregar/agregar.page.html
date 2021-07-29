@@ -13,27 +13,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-list-header>
-    <ion-label>Datos</ion-label>
-  </ion-list-header>
-
-  <ion-item>
-    <ion-label position="floating">Fecha</ion-label>
-    <ion-datetime display-forrmat="DD MMMM YYYY"
-    cancelText="Cancelar!"
-    [ngModel]="fechaCita.toISOString()"
-    (ionChange)="cambioFecha($event)" [(ngModel)]="agregar.fecha" ></ion-datetime>
-  </ion-item>
-  <ion-list-header>
-    <ion-label>Datos</ion-label>
-  </ion-list-header>    
-  <ion-item>
-    <ion-label position="floating">Hora</ion-label>
-    <ion-datetime displayFormat="HH:mm" display-forrmat="HH MM SS"
-    cancelText="Cancelar!"
-    [ngModel]="fechaCita.toISOString()"
-    (ionChange)="cambioFecha($event)" [(ngModel)]="agregar.hora"></ion-datetime>
-  </ion-item>
+  
   <ion-item>
     <ion-input placeholder="
     Descripcion" [(ngModel)]="agregar.descripcion"></ion-input>

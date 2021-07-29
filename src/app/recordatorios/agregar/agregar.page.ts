@@ -67,17 +67,18 @@ export class AgregarPage  implements OnInit{
   
 
     async guardar() {
-      const path = 'Recordatorios';
-      const id = await this.RecordatorioService.getId(); 
-      this.Agregar.id = id;
+
+      const nombre = 'Recordatorios/';
+      const uid = await this.RecordatorioService.getId(); 
+      this.Agregar.id = uid;
+	  const path = 'Usuarios/' + this.uid + '/' + nombre;
     
       
-      this.RecordatorioService.createDoc(this.agregar, path, id).then( res => {
+      this.RecordatorioService.createDoc(this.agregar, path, uid).then( res => {
           console.log('Agregado con exito');
       }).catch( error => {
       });
       }
-        
         //borrar enfermedad
         
         async deleteRecordatorios(recor) {
