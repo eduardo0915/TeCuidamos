@@ -1,16 +1,17 @@
 <ion-content>
   <header class="site-header" translucent>
 
-     <div class="hero" >
-  <div> 
+     <div class="hero"  color="medium" >
+  <div id="mobile-menu "> 
     <ion-buttons class="izqu" slot="start" routerLink="/recordatorios">
-    <ion-button color="light">
+    <ion-button color="light" Slot="end">
       <ion-icon slot="icon-only" name="arrow-back">
     </ion-icon>
     </ion-button>
-  </ion-buttons>
-  <div class="derec">
-    <ion-searchbar placeholder=""
+    <h2  >medio Ambiente</h2>
+    <ion-searchbar placeholder="" class="medium-3bde6db7--iconOnly-bddce91a"
+
+    slot="end"
     witch="20px"
     color="light" 
     showCancelButton="focus"
@@ -18,7 +19,12 @@
     inputmode="text"
     (ionChange)="onSearchChange(event)"
     [debounce]="250"
+  
+    
     ></ion-searchbar>
+  </ion-buttons>
+  <div class="derec">
+    
 </div>
 </div>    
         <div class="contenido-header">
@@ -35,7 +41,7 @@
             <ion-header>
                 <ion-toolbar>
                   
-                  <ion-title  color="medium">Dietas</ion-title>
+                  <ion-title  color="medium">Medio Ambiente</ion-title>
                 </ion-toolbar>
               </ion-header>
 
@@ -46,10 +52,8 @@
 <ion-grid>
     <ion-row>
       <ion-col size="6"> 
-        <div >
-          
-            <p><ion-img  src="assets/cuidado.jpeg" class="slogan"></ion-img></p>
-             
+        <div class="cell ">
+            <p><ion-img border-radius="100%" src="assets/cuidado.jpeg" class="slogan"></ion-img></p>  
         </div>
         <div>
             

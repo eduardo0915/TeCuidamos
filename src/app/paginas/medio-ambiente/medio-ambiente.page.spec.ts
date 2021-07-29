@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { AgregarPage } from './agregar.page';
+import { MedioAmbientePage } from './medio-ambiente.page';
 
-describe('AgregarPage', () => {
-  let component: AgregarPage;
-  let fixture: ComponentFixture<AgregarPage>;
+describe('MedioAmbientePage', () => {
+  let component: MedioAmbientePage;
+  let fixture: ComponentFixture<MedioAmbientePage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AgregarPage ],
+      declarations: [ MedioAmbientePage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AgregarPage);
+    fixture = TestBed.createComponent(MedioAmbientePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

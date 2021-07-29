@@ -22,7 +22,7 @@ export class EnfermedadesPage implements OnInit {
   Nombre: "",
   foto: "",
   edad: "",
-    sexo: "",
+  sexo: "",
 };
 
 enfermedades: Enfermedades = {

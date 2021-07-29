@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AgregarPageRoutingModule } from './agregar-routing.module';
+import { MedioAmbientePageRoutingModule } from './medio-ambiente-routing.module';
 
-import { AgregarPage } from './agregar.page';
+import { MedioAmbientePage } from './medio-ambiente.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgregarPageRoutingModule
+    MedioAmbientePageRoutingModule
   ],
-  declarations: [AgregarPage]
+  declarations: [MedioAmbientePage]
 })
-export class AgregarPageModule {}
+export class MedioAmbientePageModule {}
