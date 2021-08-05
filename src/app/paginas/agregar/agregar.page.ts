@@ -1,15 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
-import { RecordatoriosService } from 'src/app/services/recordatorios.service';
-import moment from 'moment';
-import { Agregar, Usuario } from 'src/app/paginas/user.interface';
-import { Subscription } from 'rxjs';
-import { AlertController, LoadingController, MenuController, ToastController } from '@ionic/angular';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth.service';
-import { FirestoreService } from 'src/app/firestore.service';
-import { FirestorageService } from 'src/app/firestorage.service';
-import { RecordatoriosPage } from 'src/app/paginas/recordatorios/recordatorios.page';
+import { BehaviorSubject, Subscription } from 'rxjs';
+
+const circleR = 80;
+const circleDasherray = 2 * Math.PI * circleR;
 
 
 @Component({
@@ -17,114 +10,60 @@ import { RecordatoriosPage } from 'src/app/paginas/recordatorios/recordatorios.p
   templateUrl: './agregar.page.html',
   styleUrls: ['./agregar.page.scss'],
 })
-export class AgregarPage  implements OnInit{
+export class AgregarPage {
+  time: BehaviorSubject<string>= new BehaviorSubject('00:00');
 
-  Agregar: Agregar = {
-    id: "",
-    fecha: new Date,
-    hora:new Date,
-    descripcion: "",
-  }
-  agregar: Agregar[] = [];
-  newFile: any;
-  uid = '';
-  suscriberUserInfo: Subscription;
-  actualizarEnable = false;
+  percent: BehaviorSubject<number> = new BehaviorSubject(100);
+
+  timer: number;// en segundo
+  interval;
+
+  StartDuracion = 1;
+
+  circleR = circleR;
+  circleDasherray = circleDasherray;
+
+  state: 'start' | 'stop' = 'stop';
+ 
+  constructor(){}
   
-  fechaCita: Date = new Date();
-
-  constructor(public RecordatorioService: RecordatoriosService,
-  public menucontroler: MenuController,
-  private authSvc: AuthService, private router: Router,
-  public firestoreService: FirestoreService,
-  public firestorageService: FirestorageService,
-  public loadingController: LoadingController,
-  public toastController: ToastController,
-  public alertController: AlertController,)
-  
-  
-  
-   { 
-    moment.locale('es');
-   
-   
-   }
-  async ngOnInit(){
-    const uid = await this.authSvc.getUid();
-    console.log(uid);}
-    cambioFecha( event )
-    {
-
-      console.log('ionChange', event );
-      console.log('Date', new Date (event.detail.value ));
-      
-
-    }
-    openMenu(){
-      console.log('Open menu');
-  this.menucontroler.toggle("main-menu");
-    }
-  
-
-    async guardar() {
-
-      const nombre = 'Recordatorios/';
-      const uid = await this.RecordatorioService.getId(); 
-      this.Agregar.id = uid;
-	  const path = 'Usuarios/' + this.uid + '/' + nombre;
-    
-      
-      this.RecordatorioService.createDoc(this.agregar, path, uid).then( res => {
-          console.log('Agregado con exito');
-      }).catch( error => {
-      });
+      startTimer(duration: number){
+        this.state = 'start';
+        clearInterval(this.interval);
+        this.timer = duration * 5;
+        this.updateTimeValue();
+        this.interval = setInterval( ()=>{
+        this.updateTimeValue();
+        },1000);
       }
-        //borrar enfermedad
-        
-        async deleteRecordatorios(recor) {
-        const uid = await this.authSvc.getUid();
-        const nombre = 'Recordatorios';
-        const path = 'Agregar' + uid  + nombre; 
-        const alert = await this.alertController.create({
-          cssClass: 'normal',
-          header: 'Advertencia',
-          message: ' Seguro desea <strong>eliminar Recordatorios</strong> esta discapacidad',
-          buttons: [
-            {
-              text: 'cancelar',
-              role: 'cancel',
-              cssClass: 'normal',
-              handler: (blah) => {
-                console.log('Confirm Cancel: blah');
-                // this.alertController.dismiss();
-              }
-            }, {
-              text: 'Ok',
-              handler: () => {
-                console.log('Confirm Okay');
-                this.firestoreService.deleteDoc(path,recor.id ).then( res => {
-                  this.presentToast('Recordatorio Eliminado con exito');
-                  this.alertController.dismiss();
-                }).catch( error => {
-                    this.presentToast('no se pude eliminar');
-                });
-              }
-            }
-          ]
-        });
-        await alert.present();
-        }
-        
-        async presentToast(msg: string) {
-        const toast = await this.toastController.create({
-          message: msg,
-          cssClass: 'normal',
-          duration: 2000,
-          color: 'light',
-        });
-        toast.present();
-        }
-        
-        }
-        
+      stopTimer(){
+        clearInterval(this.interval);
+        this.time.next('00:00');
+        this.state = 'stop';
+      }
 
+      percentageOffset(percent){
+        const percentFloat = percent / 100;
+        return circleDasherray  * (1 - percentFloat);
+      } 
+  updateTimeValue(){
+    let minutos: any = this.timer / 60;
+    let segundo: any = this.timer % 60;
+  
+    minutos = String('0'+ Math.floor(minutos)).slice(-2);
+    segundo = String('0'+ Math.floor(segundo)).slice(-2);
+  
+    const text = minutos + ':' + segundo;
+    this.time.next(text);
+
+    const totalTiempo = this.StartDuracion * 60;
+    const percentage = ((totalTiempo - this.timer) / totalTiempo) * 100;
+    this.percent.next(percentage);
+
+    --this.timer;
+  
+    if(this.timer < -1){
+      this.startTimer(this.StartDuracion);
+    }
+  }
+}

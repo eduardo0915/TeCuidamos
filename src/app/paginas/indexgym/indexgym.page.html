@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" routerLink="/autocuidado">
+      <ion-button>
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="center">Ejercicios</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-toolbar class="center">
+    <ion-img src="assets/gym.jpeg" ></ion-img>
+  </ion-toolbar>
+  <div>
+    <ion-segment color="primary" value="call">
+      <ion-segment-button value="call" layout="icon-bottom">
+        <ion-icon  class="azul"name="filter-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="favorite" layout="icon-bottom">
+        <ion-icon  class="azul" name="sync-sharp"></ion-icon> 
+      </ion-segment-button>
+      <ion-segment-button value="map" layout="icon-bottom"  routerLink="/agregar">
+        <ion-icon  class="azul" name="stopwatch-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment> 
+  </div>
+  <ion-item>
+    <ion-label>INFORMACION</ion-label>
+    <ion-icon  name="arrow-forward-outline"></ion-icon>
+    <ion-select [(ngModel)]="selectedVal"
+     (ionChangeo)="OnChange($event)"
+     interface="action-sheet"
+     okText="Okay"
+     cancelText="Dismiss">
+      <ion-select-option *ngFor="let item of data" [value]="item.id">
+        {{item.name}}</ion-select-option>
+    </ion-select>
+  </ion-item >
+  <ion-item>
+    <ion-label>INTRODUCCION</ion-label>
+    <ion-icon  name="arrow-forward-outline"></ion-icon>
+    <ion-select detail="none" [(ngModel)]="selectedVal2"
+     (ionChange2)="OnChange2($event2)"
+     interface="action-sheet"
+     okText="Okay"
+     cancelText="Dismiss"
+     >
+      <ion-select-option icon="none" *ngFor="let item of data2" [value]="item.id2">
+        {{item.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>TIPOS</ion-label>
+    <ion-icon  name="arrow-forward-outline"></ion-icon>
+    <ion-select [(ngModel)]="selectedVal3"
+     (ionChange2)="OnChange3($event3)"
+     interface="action-sheet"
+     okText="Okay"
+     cancelText="Dismiss">
+      <ion-select-option *ngFor="let item of data3" [value]="item.id3">
+        {{item.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+ 
+  
+  <section class="botonazul ">
+  <ion-button expand="block"size="medium" color="primary">PLAY VIDEO</ion-button>
+  </section>
+</ion-content>

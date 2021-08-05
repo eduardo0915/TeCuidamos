@@ -14,39 +14,45 @@
 <ion-content>
   
      <div class="row">
-      <div class="derec  ">
-      <ion-card href="orientacion" >
+      <div class=" izqu center">
+      <ion-card  routerLink="/orientacion" >
         <ion-img src="assets/cuidado.jpeg" ></ion-img>
-        <ion-label  class="center">Orientacion al cuidado</ion-label>
+        <ion-label>Orientacion al cuidado</ion-label>
       </ion-card>
-    
     </div>
-    
-    <div class=" izqu">
-      <ion-card href="guia">
-        <ion-img class="" src="assets/autocuidado.jpeg"></ion-img>
-        <ion-label class="center">Guia de autocuidado</ion-label>
+    <div class="derec center">
+      <ion-card  routerLink="/cuidados">
+        <ion-img src="assets/saludmental.jpeg"></ion-img>
+        <ion-label class="center"> Cuidado salud mental</ion-label>
       </ion-card>
     </div>
   </div>
   <div class="row">
-    <div class=" derec ">
-      <ion-card href="cuidados">
-        <ion-img  src="assets/saludmental.jpeg"></ion-img>
-        <ion-label class="center">Cuidado salud mental</ion-label>
+    <div class="derec center" >
+      <ion-card routerLink="/guias">
+        <ion-img  src="assets/autocuidado.jpeg"></ion-img>
+        <ion-label>Guia de autocuidado</ion-label>
       </ion-card>
       </div>
-      <div class="izqu" >
-      <ion-card href="ejercicios" >
+      <div class="izqu center"  >
+      <ion-card routerLink="/indexgym" >
         <ion-img  src="assets/ejercicio.jpeg"></ion-img>
-        <ion-label class="center">Guia para ejercicio</ion-label>
+        <ion-label>Guia para ejercicio</ion-label>
       </ion-card>
-  </div>
-  <div class="izqu" >
-    <ion-card href="dietas" >
-      <ion-img  src="assets/1.jpg"></ion-img>
-      <ion-label class="center">Dietas</ion-label>
-    </ion-card>
-</div>
-  </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="derec center" >
+      <ion-card routerLink="/dietas">
+        <ion-img  src="assets/1.jpg"></ion-img>
+        <ion-label>Dietas</ion-label>
+      </ion-card>
+      </div>
+      <div class="izqu center"  >
+      <ion-card routerLink="/ejercicios" >
+        <ion-img  src="assets/11.jpg"></ion-img>
+        <ion-label>Compra por Internet</ion-label>
+      </ion-card>
+    </div>
+   </div>
   </ion-content>

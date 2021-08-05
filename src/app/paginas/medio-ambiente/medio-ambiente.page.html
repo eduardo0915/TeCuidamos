@@ -3,12 +3,13 @@
 
      <div class="hero"  color="medium" >
   <div id="mobile-menu "> 
-    <ion-buttons class="izqu" slot="start" routerLink="/recordatorios">
+    <ion-buttons class="izqu" slot="start" routerLink="/home">
     <ion-button color="light" Slot="end">
       <ion-icon slot="icon-only" name="arrow-back">
     </ion-icon>
     </ion-button>
-    <h2  >medio Ambiente</h2>
+    <h3 class="center">Medio Ambiente</h3>
+    
     <ion-searchbar placeholder="" class="medium-3bde6db7--iconOnly-bddce91a"
 
     slot="end"
@@ -29,17 +30,17 @@
 </div>    
         <div class="contenido-header">
           
-            <div class="informacion-evento">
+            <div class="in">
                 <div class="clearfix">
                    
                 </div>
 
                 <h1 class="nombre-sitio">TeCuidamos</h1>
-                <p class="slogan">La mejor resetas <span>para Dietas</span></p>
+                <p class="slogan">Cuida <span>El medio Ambiente</span></p>
             </div>
             <!--.informacion-evento-->
             <ion-header>
-                <ion-toolbar>
+                <ion-toolbar >
                   
                   <ion-title  color="medium">Medio Ambiente</ion-title>
                 </ion-toolbar>
@@ -51,47 +52,64 @@
 </header>
 <ion-grid>
     <ion-row>
-      <ion-col size="6"> 
-        <div class="cell " href="detalle-a" >
-            <p><ion-img href="detalle-a" border-radius="100%" src="assets/a8.jpg" class="slogan"></ion-img></p>  
+      <ion-col size="6" > 
+        <div routerLink="/detalles-a">
+          <div class="imagen">
+            <p><ion-img src="assets/a8.png" class="slogan imagen "></ion-img></p>  
         </div>
-        <div href="detalle-a">
-            
-            <p><ion-img href="detalle-a" src="assets/a1.jpg" class="slogan"></ion-img></p>
+      </div>
+        
+        <div routerLink="/detalles-a">
+          <div class="imagen">
+            <p><ion-img src="assets/a1.png" class="slogan imagen"></ion-img></p>
             
         </div>
-        <div href="detalle-a">
+      </div>
+        
+        <div routerLink="/detalles-a">
+          <div class="imagen">
           
-            <p><ion-img href="detalle-a" src="assets/a2.jpg" class="slogan"></ion-img></p>
+            <p><ion-img  src="assets/a2.jpeg" class="slogan imagen"></ion-img></p>
              
         </div>
-        <div href="detalle-a">
+      </div>
+        <div routerLink="/detalles-a">
+        <div class="imagen">
             
-            <p><ion-img href="detalle-a" src="assets/a3.jpg" class="slogan"></ion-img></p>
+            <p><ion-img  src="assets/a3.jpeg" class="slogan imagen"></ion-img></p>
              
         </div>
+      </div>
       </ion-col>
+
       <ion-col size="6">
-        <div href="detalle-a">
+        <div routerLink="/detalles-a">
+          <div class="imagen">
             
-            <p><ion-img href="detalle-a" src="assets/a4.jpg"class="slogan"></ion-img></p>
+            <p><ion-img src="assets/a4.png"class="slogan imagen"></ion-img></p>
               
         </div>
-        <div href="detalle-a">
+      </div>
+    
+        <div routerLink="/detalles-a">
+          <div class="imagen">
            
-            <p><ion-img href="detalle-a" src="assets/a5.jpg" class="slogan"></ion-img></p>
+            <p><ion-img src="assets/a5.jpeg" class="slogan imagen"></ion-img></p>
               
         </div>
-        <div href="detalle-a">
-          
-            <p><ion-img href="detalle-a" src="assets/a6.jpg" class="slogan"></ion-img></p>
-           
+      </div>
+        <div href="/detalles-a">
+          <div class="imagen">
+            <p><ion-img src="assets/a6.jpg" class="slogan imagen"></ion-img></p>  
         </div>
-        <div href="detalle-a">
-            
-            <p><ion-img href="detalle-a" src="assets/a7.jpg" class="slogan"></ion-img></p>
-             
+      </div>
+        <div routerLink="/detalles-a">
+          <div class="imagen"> 
+            <p><ion-img  src="assets/a7.png" class="slogan imagen"></ion-img></p> 
         </div>
+      </div>
+      
+        
       </ion-col>
       
     </ion-row>

@@ -1,0 +1,23 @@
+.select-icon :not(none) {
+  display: none !important;
+  visibility: none !important;
+  position: none !important;
+  width: none !important;
+  height: none !important;
+}
+.center {
+  text-align: center;
+}
+.botonazul {
+  border-radius: 10px;
+  margin: 1.5rem;
+}
+.azul {
+  color: #2665aa;
+  text-align: center;
+}
+.padining {
+  padding: 1rem;
+  width: 64px;
+  height: 32px;
+}

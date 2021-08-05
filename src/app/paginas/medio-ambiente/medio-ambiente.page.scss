@@ -1,9 +1,14 @@
 ion-img {
-  border-radius: 10px !important;
+  border-radius: 20px !important;
   overflow: hidden;
+  display: block;
 }
-.izqu {
-  float: left;
+.imagen {
+  height: 89.3px !important;
+}
+
+.center {
+  text-align: center;
 }
 sc-ion-searchbar-md {
   float: right;
@@ -13,7 +18,6 @@ sc-ion-searchbar-md {
 .ion-color-light {
   --ion-color-base: none !important;
 }
-
 ion-searchbar {
   --placeholder-opacity: black;
   --box-shadow: none !important;
@@ -38,19 +42,18 @@ div.contenido-header {
 div.contenido-header {
   padding-top: 10px;
 }
-div.informacion-evento {
-  width: 70%;
+div.in {
   margin: 0 auto;
   margin-top: 50px;
 }
 
-div.informacion-evento p {
+div.in p {
   margin: 0;
   display: inline;
   font-size: 20px;
   text-transform: uppercase;
 }
-div.informacion-evento p i {
+div.in p i {
   color: #fe4918;
   font-size: 2.4rem;
 }
@@ -91,19 +94,18 @@ div.informacion-evento {
   color: #ffffff;
 }
 @media only screen and (min-width: 768px) {
-  div.informacion-evento {
-    width: 70%;
+  div.in {
     margin: 0 auto;
     margin-top: 50px;
   }
 }
-div.informacion-evento p {
+div.in p {
   margin: 0;
   display: inline;
   font-size: 20px;
   text-transform: uppercase;
 }
-div.informacion-evento p i {
+div.in p i {
   color: #fe4918;
   font-size: 2.4rem;
 }

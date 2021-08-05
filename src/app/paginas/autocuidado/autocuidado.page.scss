@@ -1,11 +1,13 @@
 .izqu {
-  float: left;
+  float: left !important;
+  width: 50%;
 }
 .derec {
-  float: right;
+  float: right !important;
+  width: 50%;
 }
 .center {
-  justify-content: center;
+  text-align: center;
 }
 #mobile-menu {
   width: 30px;
