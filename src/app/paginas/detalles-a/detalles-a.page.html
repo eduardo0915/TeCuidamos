@@ -1,9 +1,48 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Cuida el medio Ambiente</ion-title>
-  </ion-toolbar>
-</ion-header>
+  <ion-toolbar  class="ion-toolbar">
+    <ion-buttons slot="start" routerLink="/medio-ambiente">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+      
+      <ion-title id="bottom" color="medium" >Cuidemos el medio ambiente</ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content>
+
+<ion-content ng-controller="myCtrl "fullscreen>
+  <ion-card>
+    <img src="assets/a1.jpeg" />
+    <ion-card-header>
+      <ion-card-subtitle color="dark">Medio Ambiente </ion-card-subtitle>
+      <ion-card-title>Desecho de medicamentos </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>-Siga las instrucciones para deshacerse del medicamento si están disponibles en
+         la etiqueta o la información para el paciente que se incluye con el mismo.
+         No arroje el medicamento en el inodoro o 
+        fregadero a no ser que la información incluida con el medicamento así lo indique.</p>
+
+       <p> -Si no hay instrucciones para deshacerse del medicamento en la etiqueta o en la
+          hoja de información para el paciente adjunto,
+          haga los siguiente:</p>
+
+      <p> En la mayoría de los casos, estos productos químicos entran al agua cuando 
+        la gente los excreta o cuando se bañan en la ducha. Algunos productos químicos,
+         sin embargo, son arrastrados por el desagüe cuando las personas se deshacen de 
+         los medicamentos que han caducado o que ya no usan en el inodoro o el 
+         lavabo/fregadero </p>
+        
+
+         
+
+      <ion-chip>
+        <icon-nav-back-bottom routerLink="/detalles-b" color="secondary">Leer mas</icon-nav-back-bottom>
+      </ion-chip>
+    </ion-card-content>
+
+  </ion-card>
 
 </ion-content>

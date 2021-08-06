@@ -1,3 +1,4 @@
+
 ion-img {
   border-radius: 20px !important;
   overflow: hidden;
@@ -6,7 +7,9 @@ ion-img {
 .imagen {
   height: 89.3px !important;
 }
-
+.fondo{
+  background: #FFFAFA;
+}
 .center {
   text-align: center;
 }
@@ -164,7 +167,7 @@ h1.nombre-sitio {
   align-items: center;
   margin: 2rem;
 }
-#padining {
+.paddining {
   padding: 1rem;
 }
 
@@ -184,3 +187,4 @@ ion-button {
   position: absolute;
   margin-right: 1;
 }
+

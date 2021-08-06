@@ -99,6 +99,14 @@ const routes: Routes = [
     path: 'indexgym',
     loadChildren: () => import('./paginas/indexgym/indexgym.module').then( m => m.IndexgymPageModule)
   },
+  {
+    path: 'detalles-b',
+    loadChildren: () => import('./paginas/detalles-b/detalles-b.module').then( m => m.DetallesBPageModule)
+  },
+  {
+    path: 'detalles-c',
+    loadChildren: () => import('./paginas/detalles-c/detalles-c.module').then( m => m.DetallesCPageModule)
+  },
 
 
 

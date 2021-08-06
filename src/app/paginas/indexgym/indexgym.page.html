@@ -32,7 +32,7 @@
      (ionChangeo)="OnChange($event)"
      interface="action-sheet"
      okText="Okay"
-     cancelText="Dismiss">
+     cancelText="Cerrar">
       <ion-select-option *ngFor="let item of data" [value]="item.id">
         {{item.name}}</ion-select-option>
     </ion-select>
@@ -40,11 +40,11 @@
   <ion-item>
     <ion-label>INTRODUCCION</ion-label>
     <ion-icon  name="arrow-forward-outline"></ion-icon>
-    <ion-select detail="none" [(ngModel)]="selectedVal2"
+    <ion-select  detail="none" [(ngModel)]="selectedVal2"
      (ionChange2)="OnChange2($event2)"
      interface="action-sheet"
      okText="Okay"
-     cancelText="Dismiss"
+     cancelText="Cerrar"
      >
       <ion-select-option icon="none" *ngFor="let item of data2" [value]="item.id2">
         {{item.name}}</ion-select-option>

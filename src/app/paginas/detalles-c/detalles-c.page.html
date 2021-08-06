@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar  class="ion-toolbar">
+    <ion-buttons slot="start" routerLink="/medio-ambiente">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+      
+      <ion-title id="bottom" color="medium" >Cuidemos el medio ambiente</ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content ng-controller="myCtrl "fullscreen>
+  <ion-card>
+    <img src="assets/a1.jpeg" />
+    <ion-card-header>
+      <ion-card-subtitle color="dark">Medio Ambiente </ion-card-subtitle>
+      <ion-card-title>Cómo deshacerse debidamente de los medicamentos:</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>-Siga las instrucciones para deshacerse del medicamento si están disponibles 
+        en la etiqueta o la información para el paciente que se incluye con el mismo. 
+        No arroje el medicamento en el inodoro o fregadero a no ser que
+        la información incluida con el medicamento así lo indique.</p>
+
+       <p> -Si no hay instrucciones para deshacerse del medicamento en la etiqueta o 
+         en la hoja de información para el paciente adjunto, haga los siguiente:</p>
+         <ion-item>
+          <ion-avatar slot="start">
+            <img src="./avatar-finn.png">
+          </ion-avatar>
+          <ion-label>
+            <h2>1</h2>
+            <p>1.	Consulte con el departamento de policía para ver si tienen un
+               programa para recoger o recopilar estos medicamentos.</p>
+          </ion-label>
+        </ion-item>
+        <p>-Si no existen opciones para desechar estos medicamentos y tampoco tiene opciones
+           de programas para su recolección, siga estos pasos:</p>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="./avatar-han.png">
+          </ion-avatar>
+          <ion-label>
+            <h2 color="dark">2</h2>
+            <p>2.	Investigue si el programa de desperdicios peligrosos del hogar o de basura o reciclaje de su comunidad recoge medicamentos. Pare hacerlo tienen que contar 
+              con la presencia de autoridades policiales.</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="./avatar-rey.png">
+          </ion-avatar>
+          <ion-label>
+            <h2>1</h2>
+            <p>1.	Quite la etiqueta con la identificación personal de los envases de prescripción,
+               incluyendo el número de Rx, 
+              tachándolo con un marcador o raspándolo.</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="./avatar-luke.png">
+          </ion-avatar>
+          <ion-label>
+            <h2>2</h2>
+            <p>2.	Mezcle todos los medicamentos que no usa con el residuo del café molido
+              , arena para gatos, tierra o con otras sustancias indeseables. 
+              Coloque esta mezcla en un recipiente sellado antes de desecharlo en la basura. Coloque los envases vacíos
+               en la basura o en bote de basura para reciclar.</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <p>2.	Mezcle todos los medicamentos que no usa con el residuo del café molido, 
+        arena para gatos, tierra o con otras sustancias indeseables. Coloque esta mezcla 
+        en un recipiente sellado antes de desecharlo en la basura.
+         Coloque los envases vacíos en la basura o en bote de basura para reciclar.<p>
+
+      <ion-chip>
+        <icon-nav-back-bottom routerLink="/detalles-b" color="secondary">Leer mas</icon-nav-back-bottom>
+      </ion-chip>
+    </ion-card-content>
+
+  </ion-card>
+  <icon-nav-view></icon-nav-view>
+
+</ion-content>

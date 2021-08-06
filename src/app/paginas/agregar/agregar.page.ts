@@ -1,69 +1,52 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Subscription } from 'rxjs';
-
-const circleR = 80;
-const circleDasherray = 2 * Math.PI * circleR;
-
-
+import { BehaviorSubject} from 'rxjs';
 @Component({
   selector: 'app-agregar',
   templateUrl: './agregar.page.html',
   styleUrls: ['./agregar.page.scss'],
 })
 export class AgregarPage {
-  time: BehaviorSubject<string>= new BehaviorSubject('00:00');
-
-  percent: BehaviorSubject<number> = new BehaviorSubject(100);
+  time: BehaviorSubject<string> =
+   new BehaviorSubject('00:00');
 
   timer: number;// en segundo
   interval;
+  startDuration = 60;
 
-  StartDuracion = 1;
-
-  circleR = circleR;
-  circleDasherray = circleDasherray;
 
   state: 'start' | 'stop' = 'stop';
- 
-  constructor(){}
-  
-      startTimer(duration: number){
-        this.state = 'start';
-        clearInterval(this.interval);
-        this.timer = duration * 5;
-        this.updateTimeValue();
-        this.interval = setInterval( ()=>{
-        this.updateTimeValue();
-        },1000);
-      }
-      stopTimer(){
-        clearInterval(this.interval);
-        this.time.next('00:00');
-        this.state = 'stop';
-      }
+ constructor(){}
 
-      percentageOffset(percent){
-        const percentFloat = percent / 100;
-        return circleDasherray  * (1 - percentFloat);
-      } 
-  updateTimeValue(){
-    let minutos: any = this.timer / 60;
-    let segundo: any = this.timer % 60;
-  
-    minutos = String('0'+ Math.floor(minutos)).slice(-2);
-    segundo = String('0'+ Math.floor(segundo)).slice(-2);
-  
-    const text = minutos + ':' + segundo;
-    this.time.next(text);
+  startTimer(duration: number){
+     this.state = 'start';
+     clearInterval(this.interval);
+     this.timer = duration * 60;
+     this.updateTimeValue(); 
+     this.interval = setInterval( () => {
+       this.updateTimeValue();  
+     }, 1000);
+   }
+   stopTimer(){
+     clearInterval(this.interval);
+     this.time.next('00:00');
+     this.state = 'stop';
+   }
 
-    const totalTiempo = this.StartDuracion * 60;
-    const percentage = ((totalTiempo - this.timer) / totalTiempo) * 100;
-    this.percent.next(percentage);
+   updateTimeValue(){
+     let minutos: any = this.timer / 60;
+     let segundos: any = this.timer % 60;
 
-    --this.timer;
-  
-    if(this.timer < -1){
-      this.startTimer(this.StartDuracion);
-    }
-  }
+     minutos = String ('0' + Math.floor(minutos)).slice(-2);
+     segundos = String ('0' + Math.floor(segundos)).slice(-2);
+
+     const text = minutos + ':' + segundos;
+     this.time.next(text)
+
+     --this.timer; 
+
+     if (this.timer < 0) {
+     this.startTimer(this.startDuration);
+     }
+
+   }
 }

@@ -1,70 +1,28 @@
-<ion-toolbar>
-  <ion-buttons slot="start" routerLink="/home">
-    <ion-button>
-      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-title>Cronometro</ion-title>
-  <ion-buttons slot="end">
-    <ion-searchbar placeholder="" class="medium-3bde6db7--iconOnly-bddce91a"
-    witch="20px"
-    color="light" 
-    showCancelButton="focus"
-    animated 
-    inputmode="text"
-    (ionChange)="onSearchChange(event)"
-    [debounce]="250"
-  
-    
-    ></ion-searchbar>
-  </ion-buttons>
-</ion-toolbar>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>
-      Footer
-    </ion-title>
-  </ion-toolbar>
-</ion-footer>
-
-<ion-content>
-  <ion-row>
-    <svg 
-   id="progress-circle"
-   width="50vh"
-   hidden="50vh"
-   viewBox="0 0 200 00">
-   <linearGradient id="linearColors1" x1="0" y1="0" x2="1" y2="1">
-     <stop offset=0% color="#ddd6f3"></stop>
-     <stop offset=100% color="#faaca8"></stop>
-   </linearGradient>
-   <circle
-   cx="50%"
-   cy="50%"
-   [attr.r]="circleR"
-   fill="none"
-   stroke="#f3f3f3"
-   stroke-width="12" 
-   />
+<ion-header>
+  <ion-toolbar  class="ion-toolbar">
+    <ion-buttons slot="start" routerLink="/indexgym">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+      
+      <ion-title id="bottom" color="medium" >Cronometro</ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
+<ion-content color="dark">
+  <ion-row  class="ion-justify-content-center">
    
-   <circle
-   cx="50%"
-   cy="50%"
-   [attr.r]="circleR"
-   fill="none"
-   stroke = "url(#linearColors1)"
-   stroke-width="12" 
-   stroke-linecap="round"
-   [attr.stroke-dasharray]="circleDasherray"
-   [attr.stroke-dashoffset]="percentageOffset(percent | async)"
-   />
-   <text x="50%" y="55%" class="timer-text">{{ time | async}}</text>
-  </svg>
+    <h1 >{{ time | async}} </h1>
+    <h1>
+      <ion-icon name="walk-outline"></ion-icon>
+     </h1>
+ 
   </ion-row>
+ 
+  <ion-footer class="footer">
+    <ion-button *ngIf="state ==='stop'" expand="block" color="primary" (click)="startTimer(startDuration)">Empezar</ion-button>
+    <ion-button *ngIf="state ==='start'" expand="block" color="danger" (click)="stopTimer()">Detener</ion-button>
+  </ion-footer>
 </ion-content>
-<ion-footer>
-  <ion-button *ngIf="state ==='stop'" expand="block" color="primary" (click)="startTimer(StartDuracion)">Empezar</ion-button>
-  <ion-button *ngIf="state ==='start'" expand="block" color="danger" (click)="stopTimer()">Detener</ion-button>
 
-</ion-footer>
