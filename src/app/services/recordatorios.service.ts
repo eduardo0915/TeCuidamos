@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { resolve } from 'url';
@@ -9,20 +9,10 @@ import { Agregar } from '../paginas/user.interface';
 })
 export class RecordatoriosService {
 
-  constructor( public database: AngularFirestore) { }
-  createDoc(data: any, path: string, id: string) {
-    const res = this.database.collection(path);
-    return res.doc(id).set(data);
-}
-
-getDoc<tipo>(path: string, id: string) {
-  const res = this.database.collection<Agregar>(path);
-  return res.doc().valueChanges();
-}
-getId() {
-  return this.database.createId();
-}
-
+  constructor( public database: AngularFirestore, private http:HttpClient) { }
+ getTopHeadlines(){
+   return this.http.get(`https://newsapi.org/v2/everything?q=keyword&apiKey=c5edf732f05d4531a500a4366f83964e`);
+ }
 
 }
 
