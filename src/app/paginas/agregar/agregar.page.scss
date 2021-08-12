@@ -1,9 +1,11 @@
-h1{
+h1 {
   font-size: 5rem;
-  color: #F00B35;
-   
+  color: #f00b35;
 }
-
+h1.v {
+  font-size: 10rem;
+  justify-content: center;
+}
 .progress-circle {
   margin-top: 50px;
   transform: rotate(-90deg);
@@ -18,4 +20,7 @@ h1{
 }
 ion-toolbar {
   --background: #2665aa;
+}
+.tam {
+  height: 70%;
 }

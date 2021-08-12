@@ -107,6 +107,10 @@ const routes: Routes = [
     path: 'detalles-c',
     loadChildren: () => import('./paginas/detalles-c/detalles-c.module').then( m => m.DetallesCPageModule)
   },
+  {
+    path: 'zona-objetivos',
+    loadChildren: () => import('./paginas/zona-objetivos/zona-objetivos.module').then( m => m.ZonaObjetivosPageModule)
+  },
 
 
 

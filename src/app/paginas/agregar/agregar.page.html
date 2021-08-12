@@ -19,10 +19,12 @@
      </h1>
  
   </ion-row>
- 
-  <ion-footer class="footer">
+    
+    <ion-spinner color="light" name="crescent"></ion-spinner>
+     <ion-img src="assets/cronometro.png"></ion-img>
+  <ion-footer class="footer"> 
     <ion-button *ngIf="state ==='stop'" expand="block" color="primary" (click)="startTimer(startDuration)">Empezar</ion-button>
     <ion-button *ngIf="state ==='start'" expand="block" color="danger" (click)="stopTimer()">Detener</ion-button>
-  </ion-footer>
+  </ion-footer> 
 </ion-content>
 
