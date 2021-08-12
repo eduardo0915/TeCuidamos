@@ -1,12 +1,82 @@
-ion-avatar {
-  width: 100px !important;
-  height: 100px !important;
-  max-width: 100px !important; //any size
-  max-height: 100px !important; //any size
+ion-slides {
+  height: 100%;
 }
-H1 {
-  font-size: 0.8rem;
+
+.swiper-slide {
+  display: block;
 }
-span {
-  font-weight: bold;
+
+.swiper-slide h2 {
+  margin-top: 1.8rem;
+}
+
+.swiper-slide img {
+  max-height: 35%;
+  max-width: 80%;
+  margin: 40px 0 30px;
+  pointer-events: none;
+}
+
+b {
+  font-weight: 400;
+}
+
+p {
+  padding: 0 40px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ion-color-step-600, #60646b);
+}
+
+p b {
+  color: var(--ion-text-color, #000000);
+}
+.derecha {
+  float: right;
+  width: 150px;
+}
+.izqu {
+  float: left;
+  justify-content: center;
+}
+#mobile-menu {
+  width: 30px;
+  float: left;
+  margin: 10px;
+}
+#bottom {
+  align-self: flex-end;
+  margin: 10px;
+}
+#agregar {
+  margin: 10px;
+}
+.contenido {
+  color: #2665aa;
+}
+
+.izqu {
+  float: left;
+  justify-content: center;
+}
+ion-list {
+  width: 50%;
+}
+ion-card-subtitle {
+  font-weight: 600;
+}
+
+texto-blanco {
+  --color: #ffffff;
+}
+ion-toolbar {
+  --background: #2665aa;
+
+  ion-button {
+    text-transform: initial;
+    font-size: 17px;
+  }
+  ion-slides {
+    height: 100%;
+  }
 }

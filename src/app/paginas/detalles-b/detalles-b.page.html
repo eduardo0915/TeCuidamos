@@ -5,7 +5,7 @@
       <ion-card mode="ios">
         <img [src]="slide.img" class="slide-image"/>
         <ion-card-header>
-      <ion-card-subtitle>{{slide.titulo}}</ion-card-subtitle>
+      <ion-card-subtitle routerLink="/detalles-a">{{slide.titulo}}</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
           {{slide.desc}}
@@ -13,7 +13,7 @@
       </ion-card>
     </ion-slide>
     <ion-slide>
-      <ion-button routerLink="/medio-ambiente" expand="block" fill="clear">Terminar</ion-button>
+      <ion-button routerLink="/medio-ambiente" expand="block" fill="clear">Comenzar</ion-button>
     </ion-slide>
   </ion-slides>
  

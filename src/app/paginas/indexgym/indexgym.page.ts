@@ -64,14 +64,6 @@ export class IndexgymPage {
     OnChange3(event3){
       alert("selclected is = "+ event3.target.value);
     }
-    doRefresh(event4) {
-      console.log('Begin async operation');
-  
-      setTimeout(() => {
-        console.log('Async operation has ended');
-        event4.target.complete();
-      }, 2000);
-    }
    
   ngOnInit() {
   }

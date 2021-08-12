@@ -1,5 +1,4 @@
-
-<ion-content >
+<ion-content>
   <header class="site-header" translucent>
 
      <div class="hero"  color="medium" >
@@ -10,104 +9,118 @@
     </ion-icon>
     </ion-button>
     <h3 class="center " ion-padding >Medio Ambiente</h3>
-  </ion-buttons>
+    
+    <ion-searchbar placeholder="" class="medium-3bde6db7--iconOnly-bddce91a"
 
+    slot="end"
+    witch="20px"
+    color="light" 
+    showCancelButton="focus"
+    animated 
+    inputmode="text"
+    (ionChange)="onSearchChange(event)"
+    [debounce]="250"
+  
+    
+    ></ion-searchbar>
+  </ion-buttons>
+  <div class="derec">
+    
+</div>
 </div>    
-        <div class="contenedor">
+        <div class="contenido-header">
           
             <div class="in paddining" >
-                <p class="texto-encima">Cuida <span>El medio Ambiente</span></p>
-            </div>  
+                <div class="clearfix">
+                   
+                </div>
+
+                <h1 class="nombre-sitio">TeCuidamos</h1>
+                <p class="slogan">Cuida <span>El medio Ambiente</span></p>
+            </div>
+            <!--.informacion-evento-->
+            <ion-header>
+                <ion-toolbar >
+                  
+                  <ion-title  color="medium">Medio Ambiente</ion-title>
+                </ion-toolbar>
+              </ion-header>
+
         </div>
-        <ion-header>
-          <ion-toolbar>
-          
-          </ion-toolbar>
-        </ion-header>
     </div>
     <!--.hero-->
 </header>
 <ion-grid>
-    <ion-row fullscreen>
-    
+    <ion-row>
       <ion-col size="6" >
-   
-      <div routerLink="/detalles-b" class="contenedor">
-        <div class="imagen" routerLink="/detalles-b">
-          <p><ion-img src="assets/a8.png" class="slogan imagen "></ion-img></p>  
-          <p class="centrado">Desecho de medicamentos</p>
+        <div routerLink="/detalles-b" class="fondo">
+          <p class="center">Desechos de medicamentos</p>
+          <div class="imagen">
+            <p><ion-img src="assets/a8.png" class="slogan imagen "></ion-img></p>  
+        </div>
       </div>
-    </div>
-      <div routerLink="/detalles-b" class="contenedor">
-        <div class="imagen" routerLink="/detalles-b">
-          <p><ion-img src="assets/a1.png" class="slogan imagen "></ion-img></p>  
-          <p class="centrado">Cómo deshacerse los medicamentos:</p>
-      </div>
-    </div>
-    <div routerLink="/detalles-b" class="contenedor">
-        <div class="imagen" routerLink="/detalles-b">
-          <p><ion-img src="assets/a2.jpeg" class="slogan imagen "></ion-img></p>  
-          <p class="centrado">medicamentos:</p>
-      </div>
-    </div>
         
-    <div routerLink="/detalles-b" class="contenedor">
-      <div class="imagen" routerLink="/detalles-b">
-        <p><ion-img src="assets/a3.jpg" class="slogan imagen "></ion-img></p>  
-        <p class="centrado">Desechos de medicamentos</p>
-    </div>
-  </div>
-</ion-col>
+        <div routerLink="/detalles-b">
+          <p class="center">Cómo deshacerse los medicamentos:</p>
+          <div class="imagen">
+            <p><ion-img src="assets/a1.png" class="slogan imagen"></ion-img></p>
+            
+        </div>
+      </div>
+        
+        <div routerLink="/detalles-b" class="fondo">
+          <p class="center">Cómo deshacerse los medicamentos</p>
+          <div class="imagen">
+          
+            <p><ion-img  src="assets/a2.jpeg" class="slogan imagen"></ion-img></p>
+             
+        </div>
+      </div>
+        <div routerLink="/detalles-b" class="fondo">
+          <p class="center">Desechos de medicamentos</p>
+        <div class="imagen">
+            
+            <p><ion-img  src="assets/a3.jpeg" class="slogan imagen"></ion-img></p>
+             
+        </div>
+      </div>
+      </ion-col>
 
-<ion-col size="6">
-  <div routerLink="/detalles-b" class="contenedor">
-    <div class="imagen" routerLink="/detalles-b">
-      <p><ion-img src="assets/a4.png" class="slogan imagen "></ion-img></p>  
-      <p class="centrado">Desechos de medicamentos</p>
-  </div>
-</div>
+      <ion-col size="6">
+        <div routerLink="/detalles-b" class="fondo">
+          <p class="center">Desechos de medicamentos</p>
+          <div class="imagen">
+            
+            <p><ion-img src="assets/a4.png"class="slogan imagen"></ion-img></p>
+              
+        </div>
+      </div>
     
-<div routerLink="/detalles-b" class="contenedor">
-  <div class="imagen" routerLink="/detalles-b">
-    <p><ion-img src="assets/a5.jpeg" class="slogan imagen "></ion-img></p>  
-    <p class="centrado">Desecho de medicamentos</p>
-</div>
-</div>
-      <div routerLink="/detalles-b" class="contenedor">
-        <div class="imagen" routerLink="/detalles-b">
-          <p><ion-img src="assets/a6.jpg" class="slogan imagen "></ion-img></p>  
-          <p class="centrado">Desecho de medicamentos</p>
+        <div routerLink="/detalles-b" class="fondo">
+          <p class="center">Desechos de medicamentos</p>
+          <div class="imagen">
+           
+            <p><ion-img src="assets/a5.jpeg" class="slogan imagen"></ion-img></p>
+              
+        </div>
       </div>
-    </div>
-      <div routerLink="/detalles-b" class="contenedor">
-        <div class="imagen" routerLink="/detalles-b">
-          <p><ion-img src="assets/a7.png" class="slogan imagen "></ion-img></p>  
-          <p class="centrado">Desecho de medicamentos</p>
+        <div href="/detalles-b" class="fondo">
+          <p class="center">Desechos de medicamentos</p>
+          <div class="imagen">
+            <p><ion-img src="assets/a6.jpg" class="slogan imagen"></ion-img></p>  
+        </div>
       </div>
-    </div>
+      <p class="center">Desechos de medicamentos</p>
+        <div routerLink="/detalles-b" class="fondo">
+          <div class="imagen"> 
+            <p><ion-img  src="assets/a7.png" class="slogan imagen"></ion-img></p> 
+            
+        </div>
+      </div>
+      
+        
       </ion-col>
       
     </ion-row>
-
-
   </ion-grid>
-
 </ion-content>
-
-
-<script>
-  const searchbar = document.querySelector('ion-searchbar');
-  const items = Array.from(document.querySelector('p').children);
-
-  searchbar.addEventListener('ionInput', handleInput);
-
-  function handleInput(event) {
-    const query = event.target.value.toLowerCase();
-    requestAnimationFrame(() => {
-      items.forEach(item => {
-        const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
-        item.style.display = shouldShow ? 'block' : 'none';
-      });
-    });
-  }
-</script>

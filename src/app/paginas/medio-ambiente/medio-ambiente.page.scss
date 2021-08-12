@@ -1,34 +1,14 @@
-.imagen {
-  width: 173px !important;
-  height: 100px !important;
-}
+
 ion-img {
   border-radius: 20px !important;
   overflow: hidden;
   display: block;
 }
-
-.contenedor {
-  position: relative;
-  display: inline-block;
-}
-.texto-encima {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-.centrado {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fffafa;
-}
 .imagen {
-  filter: brightness(75%); // Más oscura
+  height: 89.3px !important;
 }
-.fondo {
-  background: #fffafa;
+.fondo{
+  background: #FFFAFA;
 }
 .center {
   text-align: center;
@@ -51,7 +31,7 @@ ion-searchbar {
 
 div.hero {
   background: url(/assets/medioambiente1.jpg);
-  height: 10%;
+  height: 20%;
   color: white;
 }
 div.contenido-header {
@@ -86,7 +66,83 @@ p.slogan {
 p.slogan span {
   font-weight: bold;
 }
+h1.nombre-sitio {
+  font-size: 5.9px;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+}
 
+div.contenido-header {
+  padding-top: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  div.contenido-header {
+    padding-top: 10px;
+  }
+}
+nav.redes-sociales {
+  text-align: center;
+}
+nav.redes-sociales a {
+  color: #ffffff;
+  font-size: 2em;
+  margin-right: 20px;
+}
+nav.redes-sociales a:last-child {
+  margin-right: 0;
+}
+div.informacion-evento {
+  text-align: center;
+  color: #ffffff;
+}
+@media only screen and (min-width: 768px) {
+  div.in {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+div.in p {
+  margin: 0;
+  display: inline;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+div.in p i {
+  color: #fe4918;
+  font-size: 2.4rem;
+}
+p.fecha {
+  float: left;
+}
+p.ciudad {
+  float: right;
+  text-align: right;
+  color: white;
+}
+p.slogan {
+  text-transform: none !important;
+}
+p.slogan span {
+  font-weight: bold;
+}
+h1.nombre-sitio {
+  font-size: 5.9vw;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+}
+@media only screen and (min-width: 768px) {
+  h1.nombre-sitio {
+    font-size: 11.5vw;
+    margin: 0;
+    line-height: 1;
+  }
+}
+h1.nombre-sitio {
+  font-size: 11.5px;
+  margin: 0;
+  line-height: 1;
+}
 #mobile-menu {
   width: 30px;
   float: left;
@@ -131,3 +187,4 @@ ion-button {
   position: absolute;
   margin-right: 1;
 }
+
