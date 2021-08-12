@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, ViewChild } from '@angular/core';
+import { IonInfiniteScroll } from '@ionic/angular';
 @Component({
   selector: 'app-ejercicios',
   templateUrl: './ejercicios.page.html',
   styleUrls: ['./ejercicios.page.scss'],
 })
-export class EjerciciosPage implements OnInit {
-
+export class EjerciciosPage {
   constructor() { }
-
+  
   ngOnInit() {
   }
-
+  
 }
