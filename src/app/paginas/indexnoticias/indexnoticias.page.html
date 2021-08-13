@@ -1,0 +1,14 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons class="izqu" slot="start" routerLink="/noticias2">
+      <ion-button color="dark" Slot="end">
+        <ion-icon slot="icon-only" name="arrow-back">
+      </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title slot="start">Noticias Favoritas</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+ <app-noticias [noticias]='datalocalService.noticias'></app-noticias>
+  </ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="izqu" slot="start" routerLink="/noticias1">
+      <ion-button color="dark" Slot="end">
+        <ion-icon slot="icon-only" name="arrow-back">
+      </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title slot="start">Encabezados</ion-title>
+  </ion-toolbar>
+  <ion-segment scrollable
+               mode="md" 
+               color="primary"
+               (ionChange)="cambioCategoria($event)">
+    <ion-segment-button mode="md"
+                        *ngFor="let categoria of categorias"
+                        [value]="categoria">
+        <ion-label text-capitalize>{{ categoria }}</ion-label>                
+
+    </ion-segment-button>
+    
+
+  </ion-segment>
+
+  
+</ion-header>
+
+<ion-content>
+ <app-noticias [noticias]="noticias"></app-noticias>
+ <ion-infinite-scroll threshold="100px" (ionInfinite)="loasData($event)">
+  <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Loading more data...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>

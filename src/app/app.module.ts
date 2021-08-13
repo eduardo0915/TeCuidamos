@@ -8,19 +8,18 @@ import {AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import {AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
-
-
+import {HttpClientModule }from '@angular/common/http';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 // storage module
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
-
-//import {Backlint} from '@ionic-native/backlint/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [ BrowserModule, IonicModule.forRoot(),
+  imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(),
   AppRoutingModule,AngularFireModule.initializeApp(environment.firebaseConfig),AngularFireAuthModule],
-  providers: [NativeStorage, OneSignal,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+  providers: [SocialSharing,NativeStorage, OneSignal,InAppBrowser,{ provide:  RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

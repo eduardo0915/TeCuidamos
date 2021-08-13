@@ -91,7 +91,8 @@ const routes: Routes = [
   {
     path: 'medio-ambiente',
     loadChildren: () => import('./paginas/medio-ambiente/medio-ambiente.module').then( m => m.MedioAmbientePageModule)
-  },  {
+  },
+  {
     path: 'detalles-a',
     loadChildren: () => import('./paginas/detalles-a/detalles-a.module').then( m => m.DetallesAPageModule)
   },
@@ -110,7 +111,20 @@ const routes: Routes = [
   {
     path: 'zona-objetivos',
     loadChildren: () => import('./paginas/zona-objetivos/zona-objetivos.module').then( m => m.ZonaObjetivosPageModule)
+  },  {
+    path: 'noticias1',
+    loadChildren: () => import('./paginas/noticias1/noticias1.module').then( m => m.Noticias1PageModule)
   },
+  {
+    path: 'noticias2',
+    loadChildren: () => import('./paginas/noticias2/noticias2.module').then( m => m.Noticias2PageModule)
+  },
+  {
+    path: 'indexnoticias',
+    loadChildren: () => import('./paginas/indexnoticias/indexnoticias.module').then( m => m.IndexnoticiasPageModule)
+  },
+
+  
 
 
 
