@@ -10,7 +10,6 @@ import { RespuestaTopHeadlines } from '../interfaces/interfaces';
 import { Agregar } from '../paginas/user.interface';
 
 const apiKey2 = environment.apiKey2;
- const apiUrl = environment.apiUrl;
  
 const headers = new HttpHeaders({
   'X-Api-key': apiKey2

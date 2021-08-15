@@ -17,7 +17,8 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(),
+  imports: [ BrowserModule, IonicModule.forRoot(),
+  HttpClientModule,
   AppRoutingModule,AngularFireModule.initializeApp(environment.firebaseConfig),AngularFireAuthModule],
   providers: [SocialSharing,NativeStorage, OneSignal,InAppBrowser,{ provide:  RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
