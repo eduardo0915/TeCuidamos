@@ -1,14 +1,26 @@
 import { Injectable } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage/ngx'
 import { Article } from '../interfaces/interfaces';
+import { ToastController } from '@ionic/angular';
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataLocalService {
   noticias: Article []= [];
 
-  constructor(private nativeStorage: NativeStorage) {
-  
+  constructor(private nativeStorage: NativeStorage,
+               public toastController: ToastController) {
+   this.cargarFavoritos();
+   }
+
+   async presentToastl(message: string){
+     const toast = await this.toastController.create({
+       message,
+       duration: 1500
+     });
+     toast.present();
    }
 
   guardarNoticias(noticia: Article){
@@ -19,8 +31,7 @@ export class DataLocalService {
     this.nativeStorage.setItem('favoritos',this.noticias);
   
   }
-   
-
+   this.presentToastl('Agregado a Favoritos');
 
   }
   async cargarFavoritos(){
@@ -31,4 +42,11 @@ export class DataLocalService {
     }
    
   }
+  borrarNoticia( noticia: Article ){
+     this.noticias = this.noticias.filter( noti => noti.title !== noticia.title);
+     this.nativeStorage.setItem('favoritos',this.noticias);
+     this.presentToastl('Barrado de Favoritos');
+      
+  }
+
 }

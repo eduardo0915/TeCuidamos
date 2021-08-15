@@ -1,34 +1,5 @@
-.imagen {
-  width: 200px 200px !important;
-}
-ion-img {
-  border-radius: 10px !important;
-  overflow: hidden;
-  display: block;
-}
-.contenedor {
-  position: relative;
-  display: inline-block;
-  filter: brightness(65%);
-}
-.texto-encima {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-.centrado {
-  position: absolute;
-  top: 70%;
-  left: 55%;
-  transform: translate(-50%, -50%);
-  color: #fffafa;
-}
-.imagen {
-  filter: brightness(65%); // Más oscura
-}
-.fondo {
-  background: #fffafa;
-}
-.center {
-  text-align: center;
+ion-slides, ion-slide{
+  width: 100%;
+  height: 100%;
+  
 }

@@ -4,13 +4,17 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { RespuestaTopHeadlines } from '../interfaces/interfaces';
 
+
+
+
 import { Agregar } from '../paginas/user.interface';
 
 const apiKey2 = environment.apiKey2;
-const apiUrl = environment.apiUrl;
-
+ const apiUrl = environment.apiUrl;
+ 
 const headers = new HttpHeaders({
   'X-Api-key': apiKey2
+ 
 });
 
 @Injectable({
@@ -21,7 +25,7 @@ export class RecordatoriosService {
   categoriaActual = '';
   categoriaPage = 0;
 
-  constructor( public database: AngularFirestore, private http:HttpClient) { }
+  constructor( private http:HttpClient) { }
  private ejecutarQuery( query: string){
 
  }
